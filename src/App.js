@@ -11,12 +11,25 @@ import Signin from './pages/Signin';
 
 function App() {
 
+  /* Menu Mobile */
   const [isOpen, setisOpen] = useState(false);
 
   const toggle = () => {
     setisOpen(!isOpen);
   }
 
+  useEffect(() => {
+    const hideMenu = () => {
+      if(window.innerHwidth > 768 && isOpen){
+        setisOpen(false)
+      }
+    }
+    window.addEventListener('resize', hideMenu);
+
+    return () => {
+      window.removeEventListener('resize', hideMenu)
+    }
+  })
 
 
   
