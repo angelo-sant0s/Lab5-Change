@@ -21,7 +21,7 @@ function App() {
   useEffect(() => {
     const hideMenu = () => {
       if(window.innerHwidth > 768 && isOpen){
-        setisOpen(false)
+        setisOpen(false);
       }
     }
     window.addEventListener('resize', hideMenu);
