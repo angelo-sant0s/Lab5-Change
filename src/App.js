@@ -6,7 +6,7 @@ import Home from './pages/Home';
 import About from './pages/About';
 import Error from './pages/Error';
 import Navbar from './components/Navbar/Navbar';
-import Signin from './pages/Signin';
+import Login from './pages/Login';
 
 
 function App() {
@@ -40,7 +40,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />}/>
         <Route path="/About" element={<About />}/>
-        <Route path="/Signin" element={<Signin />}/>
+        <Route path="/Login" element={<Login />}/>
         <Route path="*" element={<Error />}/>
       </Routes>
 

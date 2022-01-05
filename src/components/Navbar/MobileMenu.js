@@ -6,7 +6,7 @@ const MobileMenu = ({isOpen,toggle}) => {
         <div className={isOpen ? "grid grid-rows-4 text-center items-center bg-black text-white navlinks" : "hidden"} onClick={toggle}>
             <Link className='p-4' to="/">Home</Link>
             <Link className='p-4' to="/About">About</Link>
-            <Link className='p-4' to="/Signin">Sign In</Link>
+            <Link className='p-4' to="/Login">Sign In</Link>
         </div>
     )
 }

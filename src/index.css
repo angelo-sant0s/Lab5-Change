@@ -13,7 +13,7 @@ body {
 }
 
 ::-webkit-scrollbar {
-    width: 1px;
+    width: 5px;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -75,6 +75,12 @@ video{
 .titulo2{
 
     font-family: 'Argentum Sans', sans-serif;
+
+}
+
+.titulo3{
+
+    font-family: 'Horizon', sans-serif;
 
 }
 
