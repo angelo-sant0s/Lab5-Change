@@ -1,5 +1,5 @@
 .form-container {
-    margin: 100px auto;
+    margin: 250px auto;
     width: 1000px;
     box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.2);
     position: relative;
@@ -9,7 +9,17 @@
     grid-template-columns: 1fr 1fr;
 }
 
-
+.video-fundo{
+        width: 100vw;
+        height: 100vh;
+        object-fit: cover;
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        z-index: -1;
+}
 
 .close-btn {
     position: absolute;

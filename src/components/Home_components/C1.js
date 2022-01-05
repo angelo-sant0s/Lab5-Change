@@ -5,7 +5,7 @@ import Video from '../../assets/videos/video_1.mp4';
 const C1 = () => {
     return (
         <div className=''>
-            <video className='static' src={Video} autoPlay muted loop />
+            <video className='video-fundo' src={Video} autoPlay muted loop />
             <section className='pl-16 absolute top-1/3'>
             <section className='grid sm:grid-cols-2 md:grid-cols-1 md:gap-3 text-white'>
                 <h1 className='titulo1 md:text-8xl sm:text-2xl'>Climate</h1>

@@ -1,13 +1,36 @@
-import React from 'react'
+import React, {useState} from 'react';
 import useForm from "./useForm";
 import validate from "./validateInfo";
 import './Form.css';
+import{createUserWithEmailAndPassword} from 'firebase/auth';
+import {auth} from './../../firebase-config';
 
 const Login_Elements = ({ submitForm }) => {
     const { handleChange, handleSubmit, values, errors } = useForm(
         submitForm,
         validate
     );
+
+     /* Firebase Authentication */
+     const register = async () => {
+         try{
+         const user = await createUserWithEmailAndPassword(auth, registerEmail, registerPassword);
+         } catch (error){
+             console.log(error.message);
+         }
+    }
+    const login = async () => {
+
+    }
+    const logout = async () => {
+
+    }
+
+    const [registerEmail, setRegisterEmail] = useState();
+    const [registerPassword, setRegisterPassword] = useState();
+    const [registerUsername, setRegisterUsername] = useState();
+    const [loginEmail, setLoginEmail] = useState();
+    const [loginPassword, setLoginPassword] = useState();
 
     return (
         <div className='form-content-right'>
@@ -24,7 +47,8 @@ const Login_Elements = ({ submitForm }) => {
                         name='username'
                         placeholder='Enter your username'
                         value={values.username}
-                        onChange={handleChange}
+                        onChange={(event) => {setRegisterUsername(event.target.value)}}
+                        onChange = {handleChange}
                     />
                     {errors.username && <p>{errors.username}</p>}
                 </div>
@@ -36,7 +60,8 @@ const Login_Elements = ({ submitForm }) => {
                         name='email'
                         placeholder='Enter your email'
                         value={values.email}
-                        onChange={handleChange}
+                        onChange={(event) => {setRegisterEmail(event.target.value)}}
+                        onChange = {handleChange}
                     />
                     {errors.email && <p>{errors.email}</p>}
                 </div>
@@ -60,11 +85,12 @@ const Login_Elements = ({ submitForm }) => {
                         name='password2'
                         placeholder='Confirm your password'
                         value={values.password2}
-                        onChange={handleChange}
+                        onChange={(event) => {setRegisterPassword(event.target.value)}}
+                        onChange = {handleChange}
                     />
                     {errors.password2 && <p>{errors.password2}</p>}
                 </div>
-                <button className='form-input-btn btn titulo2 mt-5' type='submit'>
+                <button className='form-input-btn btn titulo2 mt-5' type='submit' onClick={register}>
                     Sign up
                 </button>
                 <span className='form-input-login'>
