@@ -19,8 +19,8 @@ const C1_ = () => {
 
     return (
         <div>
-            <h2>Slider #1</h2>
             <Slider {...slider1}/>
+            <h1 className='text-white absolute top-1/2 left-56 titulo1 md:text-5xl lg:text-7xl text-lg'>THE WORLD IS CHANGING</h1>
         </div>
     )
 }
