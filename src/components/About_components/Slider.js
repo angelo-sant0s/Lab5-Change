@@ -70,12 +70,12 @@ function Slider({ original, modified, delay = 0 }) {
                 onClick={onDragStop}
                 className={`cd-image-container ${isVisible && 'is-visible'}`}
                 ref={container}>
-            <Image {...original} />
+            <Image {...modified} />
 
 
             <div style={{ width: sizes.resizableImageWidth }}
                  className={`cd-resize-img ${isDragStarted && 'resizable'}`}>
-                <Image {...modified} />
+                <Image {...original} />
             </div>
 
             <Handle isDragStarted={isDragStarted}
