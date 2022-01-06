@@ -4,7 +4,7 @@ import {FaArrowsAltH} from "react-icons/fa";
 const C1 = () => {
 
     const [imageRevealFraction, setimageRevealFraction] = useState(0.5);
-    const imageContainer = useRef < HTMLDivElement > (undefined);
+    const imageContainer = useRef <HTMLDivElement> (undefined);
 
     const slide = (xPosition: number): void => {
         const containerBoundingReact = imageContainer.current.getBoundingClientRect();
@@ -49,7 +49,7 @@ const C1 = () => {
                     style={{
                         clipPath: `polygon(0 0,${imageRevealFraction * 100}% 0, ${imageRevealFraction * 100}% 100%, 0 100%)`,
                     }}
-                    src="https://cbsnews3.cbsistatic.com/hub/i/r/2021/10/14/ca1ad3a4-1746-4ddd-9739-6eebcbe57ba0/thumbnail/620x414/b1cb2c0e89900bf07b9c81cba599d95c/gettyimages-1235852036.jpg"
+                    src="https://cbsnews2.cbsistatic.com/hub/i/r/2021/05/28/8e275b30-97e2-4e0f-9fb1-da76a6675e3f/thumbnail/620x381/c9ee8601b7602d0c812ca842bde3911a/gettyimages-1228460051.jpg"
                     alt=""
                     className="absolute inset-0 pointer-events-none"
                 />
@@ -58,7 +58,7 @@ const C1 = () => {
                     className="absolute inset-y-0 group-hover:opacity-100 sm:opacity-0">
                     <div className="relative h-full opacity-50 hover:opacity-100">
                         <div className="absolute inset-y-0 bg-white w-0.5 -ml-px opacity-50"></div>
-                        <div onmousedown={handleMouseDown} ontouchmove={handleMouseMove} className="bg-white h-12 w-12 rounded-full -ml-6 absolute top-1/2 -mt-6 shadow-xl flex items-center justify-center cursor-pointer">
+                        <div onMouseDown={handleMouseDown} className="bg-white h-12 w-12 rounded-full -ml-6 absolute top-1/2 -mt-6 shadow-xl flex items-center justify-center cursor-pointer">
                             <span className="w-6 text-gray-400 rotate-90 transform"  aria-label="ArrowsAltH">
                                 <FaArrowsAltH/>
                             </span>
