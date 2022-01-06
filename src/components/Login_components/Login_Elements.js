@@ -2,8 +2,8 @@ import React, {useState} from 'react';
 import useForm from "./useForm";
 import validate from "./validateInfo";
 import './Form.css';
-import{createUserWithEmailAndPassword} from 'firebase/auth';
-import {auth} from './../../firebase-config';
+import{ createUserWithEmailAndPassword, onAuthStateChanged, signOut } from 'firebase/auth';
+import { auth } from './../../firebase-config';
 
 const Login_Elements = ({ submitForm }) => {
     const { handleChange, handleSubmit, values, errors } = useForm(
@@ -14,26 +14,21 @@ const Login_Elements = ({ submitForm }) => {
      /* Firebase Authentication */
      const register = async () => {
          try{
-         const user = await createUserWithEmailAndPassword(auth, registerEmail, registerPassword);
+         const user = await createUserWithEmailAndPassword(auth, values.email, values.password2);
          } catch (error){
              console.log(error.message);
          }
     }
-    const login = async () => {
-
-    }
     const logout = async () => {
-
+        await signOut(auth);
     }
+    const [user, setUser] = useState({});
 
-    const [registerEmail, setRegisterEmail] = useState();
-    const [registerPassword, setRegisterPassword] = useState();
-    const [registerUsername, setRegisterUsername] = useState();
-    const [loginEmail, setLoginEmail] = useState();
-    const [loginPassword, setLoginPassword] = useState();
+    onAuthStateChanged(auth, (currentuser) => {
+        setUser(currentuser);
+    })
 
     return (
-        <div className='form-content-right'>
             <form onSubmit={handleSubmit} className='form' noValidate>
                 <h1>
                     Get started with us today! Create your account by filling out the
@@ -47,7 +42,6 @@ const Login_Elements = ({ submitForm }) => {
                         name='username'
                         placeholder='Enter your username'
                         value={values.username}
-                        onChange={(event) => {setRegisterUsername(event.target.value)}}
                         onChange = {handleChange}
                     />
                     {errors.username && <p>{errors.username}</p>}
@@ -60,7 +54,6 @@ const Login_Elements = ({ submitForm }) => {
                         name='email'
                         placeholder='Enter your email'
                         value={values.email}
-                        onChange={(event) => {setRegisterEmail(event.target.value)}}
                         onChange = {handleChange}
                     />
                     {errors.email && <p>{errors.email}</p>}
@@ -85,7 +78,6 @@ const Login_Elements = ({ submitForm }) => {
                         name='password2'
                         placeholder='Confirm your password'
                         value={values.password2}
-                        onChange={(event) => {setRegisterPassword(event.target.value)}}
                         onChange = {handleChange}
                     />
                     {errors.password2 && <p>{errors.password2}</p>}
@@ -93,11 +85,7 @@ const Login_Elements = ({ submitForm }) => {
                 <button className='form-input-btn btn titulo2 mt-5' type='submit' onClick={register}>
                     Sign up
                 </button>
-                <span className='form-input-login'>
-                    Already have an account? Login <a href='#'>here</a>
-                </span>
             </form>
-        </div>
     );
 };
 
