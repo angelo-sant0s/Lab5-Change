@@ -1,10 +1,9 @@
 import React from 'react'
+import Footer from '../components/Footer/Footer.js'
 
 const About = () => {
     return (
-        <div>
-            <h1>About</h1>
-        </div>
+        <Footer />
     )
 }
 

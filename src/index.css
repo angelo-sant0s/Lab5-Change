@@ -44,7 +44,7 @@ code {
   font-family: 'Horizon', sans-serif;
   color: #fff;
   font-size: 35pt;
-  text-decoration: none; 
+  text-decoration: none;
 }
 
 .navlinks{
@@ -55,7 +55,7 @@ code {
     text-decoration: none;
     padding: .5rem 2rem;
     height: 100%;
-    cursor: pointer; 
+    cursor: pointer;
 }
 
 
@@ -80,6 +80,14 @@ code {
 .titulo2{
 
     font-family: 'Argentum Sans', sans-serif;
+
+}
+
+.yum{
+    border-right: 1px solid white;
+    padding-right: 10px;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
 
 }
 
