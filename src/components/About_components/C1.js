@@ -15,7 +15,7 @@ const slider1 = {
     }
 };
 
-const C1_ = () => {
+const C1 = () => {
 
     return (
         <div>
@@ -26,4 +26,4 @@ const C1_ = () => {
     )
 }
 
-export default C1_;
+export default C1;

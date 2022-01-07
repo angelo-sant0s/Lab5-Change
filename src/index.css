@@ -94,8 +94,9 @@ code {
 .titulo3{
 
     font-family: 'Horizon', sans-serif;
-
 }
+
+
 
 .btn{
     @apply rounded-full py-3 px-11 cursor-pointer bg-white text-black hover:bg-black hover:text-white
