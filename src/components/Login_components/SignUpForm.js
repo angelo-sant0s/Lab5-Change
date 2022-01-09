@@ -1,35 +1,27 @@
-import React, {useState} from 'react';
-import useForm from "./useForm";
-import validate from "./validateInfo";
+import React, {useRef, useState} from 'react';
 import './Form.css';
-import{ createUserWithEmailAndPassword, onAuthStateChanged, signOut } from 'firebase/auth';
-import { auth } from './../../firebase-config';
+import { signup, useAuth } from '../../firebase-config';
 
-const Login_Elements = ({ submitForm }) => {
-    const { handleChange, handleSubmit, values, errors } = useForm(
-        submitForm,
-        validate
-    );
 
-     /* Firebase Authentication */
-     const register = async () => {
-         try{
-         const user = await createUserWithEmailAndPassword(auth, values.email, values.password2);
-         } catch (error){
-             console.log(error.message);
-         }
+const SignUpForm = () => {
+    const[loading,setLoading] = useState();
+    const emailRef = useRef();
+    const PasswordRef = useRef();
+    const passwordConfirmRef = useRef();
+    const currentUser = useAuth();
+
+    const handleSubmit = async (event) => {
+        setLoading(true);
+        try{    
+            await signup(emailRef.current.value,PasswordRef.current.value);
+        }catch(error){
+            alert(error.message);
+        }
+        setLoading(false);
     }
-    const logout = async () => {
-        await signOut(auth);
-    }
-    const [user, setUser] = useState({});
-
-    onAuthStateChanged(auth, (currentuser) => {
-        setUser(currentuser);
-    })
 
     return (
-            <form onSubmit={handleSubmit} className='form' noValidate>
+            <form className='form' noValidate>
                 <h1>
                     Get started with us today! Create your account by filling out the
                     information below.
@@ -41,10 +33,7 @@ const Login_Elements = ({ submitForm }) => {
                         type='text'
                         name='username'
                         placeholder='Enter your username'
-                        value={values.username}
-                        onChange = {handleChange}
                     />
-                    {errors.username && <p>{errors.username}</p>}
                 </div>
                 <div className='form-inputs'>
                     <label className='form-label'>Email</label>
@@ -53,10 +42,9 @@ const Login_Elements = ({ submitForm }) => {
                         type='email'
                         name='email'
                         placeholder='Enter your email'
-                        value={values.email}
-                        onChange = {handleChange}
+                        ref={emailRef}
+                        required
                     />
-                    {errors.email && <p>{errors.email}</p>}
                 </div>
                 <div className='form-inputs'>
                     <label className='form-label'>Password</label>
@@ -65,10 +53,8 @@ const Login_Elements = ({ submitForm }) => {
                         type='password'
                         name='password'
                         placeholder='Enter your password'
-                        value={values.password}
-                        onChange={handleChange}
+                        ref={PasswordRef}
                     />
-                    {errors.password && <p>{errors.password}</p>}
                 </div>
                 <div className='form-inputs'>
                     <label className='form-label'>Confirm Password</label>
@@ -77,16 +63,15 @@ const Login_Elements = ({ submitForm }) => {
                         type='password'
                         name='password2'
                         placeholder='Confirm your password'
-                        value={values.password2}
-                        onChange = {handleChange}
+                        ref={passwordConfirmRef}
                     />
-                    {errors.password2 && <p>{errors.password2}</p>}
                 </div>
-                <button className='form-input-btn btn titulo2 mt-5' type='submit' onClick={register}>
+                <button className='form-input-btn btn titulo2 mt-5' disabled={loading || currentUser } onClick={handleSubmit}>
                     Sign up
                 </button>
+                <div className='text-white'>{currentUser?.email}</div>
             </form>
     );
 };
 
-export default Login_Elements;
+export default SignUpForm;

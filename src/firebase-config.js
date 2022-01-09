@@ -1,12 +1,8 @@
-// Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import { getAuth } from 'firebase/auth';
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
+import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signOut } from 'firebase/auth'; 
+import { useState, useEffect } from "react";
 
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
-const firebaseConfig = {
+const config = {
   apiKey: "AIzaSyA9Ilb40O2dlZQR8xyzXVOYb3fsaRsXnNo",
   authDomain: "change-project-adbdb.firebaseapp.com",
   projectId: "change-project-adbdb",
@@ -14,9 +10,31 @@ const firebaseConfig = {
   messagingSenderId: "912837231043",
   appId: "1:912837231043:web:724d53073973373543fd76",
   measurementId: "G-4FXWQXPNCY"
-};
+}
 
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
+const app = initializeApp(config);
+const auth = getAuth(app);
 
-export const auth = getAuth(app);
+export const signup = (email, password) => {
+  return createUserWithEmailAndPassword(auth, email, password);
+}
+
+export const logout = () => {
+  return signOut(auth);
+}
+
+export const login = (email,password) => {
+  return signInWithEmailAndPassword(auth, email, password);
+}
+
+
+export const useAuth = () => {
+  const [currentUser, setCurrentUser] = useState();
+
+  useEffect(() => {
+    const unsub = onAuthStateChanged(auth, user => setCurrentUser(user))
+    return unsub;
+  }, [])
+
+  return currentUser;
+}

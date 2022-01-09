@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import {Link} from 'react-router-dom';
+import { logout } from '../../firebase-config'; 
 
 
 const Navbar = ({toggle}) => {
@@ -12,12 +13,19 @@ const Navbar = ({toggle}) => {
             setColor(false)
         }
     }
+    async function handleLogout() {
+        try{   
+            await logout();
+        }catch(error){
+            alert(error.message)
+        }
+    }
 
     window.addEventListener("scroll", changeColor)
 
     return (
         <div className={color ? 'header nav-bg' : 'header'}>
-            <nav className='sticky flex justify-between items-center h-16 mt-5 text-white relative shadow-sm font-mono'
+            <nav className='sticky flex justify-between items-center h-16 mt-5 text-white shadow-sm font-mono'
                  role='navigation'>
                 <Link to="/" className='pl-8 logo'>
                     Change
@@ -32,6 +40,7 @@ const Navbar = ({toggle}) => {
                     <Link className='p-5 ativo' to="/">Home</Link>
                     <Link className='p-5 ativo' to="/About">About</Link>
                     <Link className='p-5 ativo' to="/Login">Login</Link>
+                    <Link className='p-5 ativo' to="/" onClick={handleLogout}>Logout</Link>
                 </div>
             </nav>
         </div>

@@ -1,32 +1,25 @@
-import React, {useState} from 'react';
-import useForm from "./useForm";
-import validate from "./validateInfo";
+import React, {useState, useRef} from 'react';
 import './Form.css';
-import{signInWithEmailAndPassword, signOut } from 'firebase/auth';
-import { auth } from './../../firebase-config';
+import { login , useAuth } from '../../firebase-config';
 
-const Login_Form = ({ submitForm }) => {
-    const { handleChange, handleSubmit, values, errors } = useForm(
-        submitForm,
-        validate
-    );
+const LoginForm = () => {
 
-     /* Firebase Authentication */
-    const login = async () => {
-        try{
-            const user = await signInWithEmailAndPassword(auth, values.email,values.password)
-            console.log(user);
+    const[loading,setLoading] = useState();
+    const emailRef = useRef();
+    const PasswordRef = useRef();
+    const currentUser = useAuth();
+    const handleLogin = async (event) => {
+        setLoading(true);
+        try{    
+            await login(emailRef.current.value,PasswordRef.current.value);
         }catch(error){
-            console.log(error.message);
+            alert(error.message);
         }
-    }
-    const logout = async () => {
-        await signOut(auth);
+        setLoading(false);
     }
 
-
-    return (
-            <form onSubmit={handleSubmit} className='form' noValidate>
+    return(
+            <form className='form' noValidate>
                 <h1>
                     Glad to have you back. Let the Change continue.
                 </h1>
@@ -37,10 +30,8 @@ const Login_Form = ({ submitForm }) => {
                         type='email'
                         name='email'
                         placeholder='Enter your email'
-                        value={values.email}
-                        onChange = {handleChange}
+                        ref={emailRef}
                     />
-                    {errors.email && <p>{errors.email}</p>}
                 </div>
                 <div className='form-inputs'>
                     <label className='form-label'>Password</label>
@@ -49,16 +40,15 @@ const Login_Form = ({ submitForm }) => {
                         type='password'
                         name='password'
                         placeholder='Enter your password'
-                        value={values.password}
-                        onChange={handleChange}
+                        ref={PasswordRef}
                     />
-                    {errors.password && <p>{errors.password}</p>}
                 </div>
-                <button className='form-input-btn btn titulo2 mt-5' type='submit' onClick={login}>
+                <button className='form-input-btn btn titulo2 mt-5' disabled={loading || currentUser } onClick={handleLogin}>
                     Login
                 </button>
+                <div className='text-white'>{currentUser?.email}</div>
             </form>
     );
 };
 
-export default Login_Form;
+export default LoginForm;

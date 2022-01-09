@@ -7,6 +7,7 @@ import About from './pages/About';
 import Error from './pages/Error';
 import Navbar from './components/Navbar/Navbar';
 import Login from './pages/Login';
+import {signup} from './firebase-config';
 
 
 function App() {
@@ -26,8 +27,6 @@ function App() {
     }
     window.addEventListener('resize', hideMenu);
 
-
-  
     return () => {
       window.removeEventListener('resize', hideMenu)
     }
@@ -36,17 +35,16 @@ function App() {
 
   
   return (
-    <Router>
-      <Navbar toggle={toggle}/>
-      <MobileMenu isOpen={isOpen} toggle={toggle}/>
-      <Routes>
-        <Route path="/" element={<Home />}/>
-        <Route path="/About" element={<About />}/>
-        <Route path="/Login" element={<Login />}/>
-        <Route path="*" element={<Error />}/>
-      </Routes>
-
-    </Router>  
+      <Router>
+        <Navbar toggle={toggle}/>
+        <MobileMenu isOpen={isOpen} toggle={toggle}/>
+        <Routes>
+          <Route path="/" element={<Home />}/>
+          <Route path="/About" element={<About />}/>
+          <Route path="/Login" element={<Login signup={signup} />}/>
+          <Route path="*" element={<Error />}/>
+        </Routes>
+      </Router> 
   );
 }
 
