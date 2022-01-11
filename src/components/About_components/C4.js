@@ -8,21 +8,21 @@ const C4 = () => {
                 <h1 className="text-6xl font-bold uppercase text-white titulo1 py-11">Data</h1>
                 <div className="flex mb-4 gap-2">
                     <div className="w-1/2 bg-neutral-900 h-72">
-                        <div className="border-2 pb-52 m-10"></div>
+                        <div className="border-2 pb-64 m-4"></div>
                     </div>
                     <div className="w-1/2 bg-neutral-900 h-72">
-                        <div className="border-2 pb-52 m-10"></div>
+                        <div className="border-2 pb-64 m-4"></div>
                     </div>
                 </div>
                 <div className="flex gap-2">
                     <div className="w-1/5 bg-neutral-900 h-96">
-                        <div className="border-2 pb-72 m-10"></div>
+                        <div className="border-2 pb-80 m-6"></div>
                     </div>
                     <div className="w-3/5 bg-neutral-900 h-96">
-                        <div className="border-2 pb-72 m-10"></div>
+                        <div className="border-2 pb-80 m-6"></div>
                     </div>
                     <div className="w-1/5 bg-neutral-900 h-96">
-                        <div className="border-2 pb-72 m-10"></div>
+                        <div className="border-2 pb-80 m-6"></div>
                     </div>
                 </div>
                 <button className="titulo2 btn text-2xl  mt-16 ">
