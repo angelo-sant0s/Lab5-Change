@@ -1,9 +1,12 @@
 import React, {useState} from 'react';
 import {Link} from 'react-router-dom';
 import { logout } from '../../firebase-config'; 
+import { useAuth } from '../../firebase-config';
 
 
 const Navbar = ({toggle}) => {
+
+    const currentUser = useAuth();
 
     const [color, setColor] = useState(false)
     const changeColor = () => {
@@ -39,8 +42,8 @@ const Navbar = ({toggle}) => {
                 <div className='pr-8 md:block hidden navlinks'>
                     <Link className='p-5 ativo' to="/">Home</Link>
                     <Link className='p-5 ativo' to="/About">About</Link>
-                    <Link className='p-5 ativo' to="/Login">Login</Link>
-                    <Link className='p-5 ativo' to="/" onClick={handleLogout}>Logout</Link>
+                    { !currentUser ? <Link className='p-5 ativo' to="/Login">Login</Link> : <Link className='p-5 ativo' to="/Profile">Profile</Link> }
+                    { currentUser ? <Link className='p-5 ativo' to="/" onClick={handleLogout}>Logout</Link> : ""}
                 </div>
             </nav>
         </div>

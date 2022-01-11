@@ -12,6 +12,7 @@ const LoginForm = () => {
         setLoading(true);
         try{    
             await login(emailRef.current.value,PasswordRef.current.value);
+
         }catch(error){
             alert(error.message);
         }
