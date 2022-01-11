@@ -4,11 +4,11 @@ export default class FetchData extends React.Component {
 
     state = {
         loading: true,
-        person: null
+        info: null
     };
 
     async componentDidMount() {
-        const url = "https://api.randomuser.me/";
+        const url = "https://global-warming.org/api/arctic-api";
         const response = await fetch(url);
         const data = await response.json();
         this.setState({info: data.results[0], loading: false});
@@ -16,13 +16,6 @@ export default class FetchData extends React.Component {
 
     render() {
 
-        if (this.state.loading) {
-            return <div>loading...</div>;
-        }
-
-        if (!this.state.info) {
-            return <div>didn't get the data</div>;
-        }
 
         return (
             <>
@@ -32,9 +25,13 @@ export default class FetchData extends React.Component {
                         <div className="w-1/2 bg-neutral-900 h-72">
                             <div className="border-2 pb-64 m-4">
                                 <div>
-                                    <div>{this.state.info.name.title}</div>
-                                    <div>{this.state.info.name.first}</div>
-                                    <div>{this.state.info.name.last}</div>
+                                    {this.state.loading || !this.state.info ? (<div>loading...</div>) : (
+                                        <div>
+                                            <div>{this.state.info.year.last}</div>
+                                            <div>{this.state.info.extent.last}</div>
+                                            <div>{this.state.info.area.last}</div>
+                                        </div>
+                                    )}
                                 </div>
                             </div>
                         </div>
