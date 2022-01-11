@@ -1,13 +1,13 @@
 import React from 'react';
-import { useAuth } from '../firebase-config';
+import { getAuth } from 'firebase/auth';
 
 const Profile = () => {
 
-    const currentUser = useAuth();
+    const currentUser = getAuth();
 
     return (
         <div className='text-white'>
-            
+            {currentUser.currentUser.email}
         </div>
     )
 }
