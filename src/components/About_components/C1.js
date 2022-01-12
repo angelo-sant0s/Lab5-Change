@@ -4,7 +4,7 @@ import modifiedImage from '../../assets/imgs/img-modified.jpg';
 import Slider from './Slider';
 
 const slider1 = {
-    delay: 2000,
+    delay: 500,
     original: {
         url: originalImage,
         title: 'Before'
