@@ -3,7 +3,7 @@ import React from 'react'
 const C2 = () => {
     return (
         <>
-            <div className="text-center text-white ml-80 mr-80 pt-32 pb-32">
+            <div className="text-center text-white ml-80 mr-80 pt-32 pb-24">
                 <h1 className="text-6xl font-medium ">Block</h1>
                 <p className="text-xl font-extralight text-justify mt-7">
                     Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
@@ -20,7 +20,7 @@ const C2 = () => {
                     consectetuer adipiscing elit, sed diam nonummy nibh euismod tin
                 </p>
             </div>
-            <div className="grid grid-cols-4 grid-rows-2 gap-2  mb-24 ml-5 mr-5 justify-items-center text-center">
+            <div className="grid grid-cols-4 mb-32 mx-5  text-center">
                 <section className="text-white titulo2 ">
                     <p className="font-medium tracking-tight text-xl">Block</p>
                     <p className="font-extralight text-2xl">Block and books</p>
