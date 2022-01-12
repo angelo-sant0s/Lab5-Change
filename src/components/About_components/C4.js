@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default class FetchData extends React.Component {
 
@@ -6,6 +7,8 @@ export default class FetchData extends React.Component {
         loading: true,
         info: null
     };
+
+    
 
     async componentDidMount() {
         const url = "https://global-warming.org/api/arctic-api";
@@ -50,9 +53,7 @@ export default class FetchData extends React.Component {
                             <div className="border-2 pb-80 m-6"></div>
                         </div>
                     </div>
-                    <button className="titulo2 btn text-2xl  mt-16 ">
-                        Descobre o teu
-                    </button>
+                    {currentUser ? <Link className="titulo2 btn text-2xl  mt-16" to="/Profile"> Descobre o teu </Link> : <Link className="titulo2 btn text-2xl  mt-16" to="/Login"> Descobre o teu </Link>}
                 </div>
             </>
         )
