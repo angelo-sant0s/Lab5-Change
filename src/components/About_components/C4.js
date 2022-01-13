@@ -2,27 +2,23 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 export default class FetchData extends React.Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
-            value: 'select',
+            value: 'Select Year',
             loading: true,
-            info: null
+            info: null,
+            anos: [],
+            index: 0
         }
         this.handleChange = this.handleChange.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     handleChange(event){
-        this.setState({category: event.target.value});
+        this.setState({value: event.target.value});
+        this.setState({index: this.state.info.map((e) => {return e.year}).indexOf(this.state.value)})
+        console.log(this.state.index);
     }
-
-    handleSubmit(event){
-        console.log(this.state);
-        event.preventDefault();
-    }
-
-
 
     async componentDidMount() {
         const url = "https://global-warming.org/api/arctic-api";
@@ -31,8 +27,11 @@ export default class FetchData extends React.Component {
         this.setState({info: data.result, loading: false});
 
         for(let i = 0 ; i < this.state.info.length; i++){
-            console.log(this.state.info[i]);
+            this.state.anos.push(this.state.info[i].year);
         }
+        this.setState({value: this.state.info[this.state.info.length-1].year})
+        this.setState({index: this.state.info.map((e) => {return e.year}).indexOf(this.state.value)});
+        console.log(this.state.index);
     }
 
     render() {
@@ -54,16 +53,17 @@ export default class FetchData extends React.Component {
                                         </div>
                                     )}
                                 </div>
-                                <form onsubmit={this.handleSubmit}>
+                                <div>
                                     <select id="lang" onChange={this.handleChange} value={this.state.value}>
-                                        <option value="select">Select</option>
-                                        <option value="Java">Java</option>
-                                        <option value="C++">C++</option>
+                                        {this.state.anos.map((ano) =>
+                                            <option key={ano} value={ano}>{ano}</option>)}
                                     </select>
-                                    <p></p>
-                                    <input type="submit" value="Submit" />
-                                    <p>{this.state.value}</p>
-                                </form>
+                                    {this.state.info && this.state.index ? ( <>
+                                        <div>{this.state.info[this.state.index].year}</div>
+                                        <div>{this.state.info[this.state.index].extent}</div>
+                                        <div>{this.state.info[this.state.index].area}</div>
+                                    </>) : (<div>loading...</div>) }
+                                </div>
                             </div>
                         </div>
                         <div className="w-1/2 bg-neutral-900 h-72">
