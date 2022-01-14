@@ -6,13 +6,18 @@ export default class FetchData extends React.Component {
         super(props);
         this.state = {
             value: 'Select Year',
+            value2: 0,
             loading: true,
+            loading2: true,
             info: null,
             info2: null,
             anos: [],
-            index: 0
+            times: [],
+            index: 0,
+            index2: 0
         }
         this.handleChange = this.handleChange.bind(this);
+        this.handleChange2 = this.handleChange2.bind(this);
     }
 
     handleChange(event) {
@@ -22,10 +27,18 @@ export default class FetchData extends React.Component {
                 return e.year
             }).indexOf(event.target.value)
         })
-        console.log(this.state.index);
+    }
+    handleChange2(event){
+        this.setState({value2: event.target.value});
+        this.setState({
+            index2: this.state.info2.map((e) => {
+                return e.time
+            }).indexOf(event.target.value)
+        })
     }
 
     async componentDidMount() {
+        /* Primeiro Fetch */
         fetch("https://global-warming.org/api/arctic-api")
             .then(function (response) {
                 return response.json();
@@ -43,13 +56,25 @@ export default class FetchData extends React.Component {
                     }).indexOf(this.state.value)
                 });
             });
+
+        /* Segundo Fetch */
         fetch("https://global-warming.org/api/temperature-api")
             .then(function (response) {
                 return response.json();
             })
             .then((data) => {
-                this.setState({info2: data.result, loading: false});
+                this.setState({info2: data.result, loading2: false});
+                for (let i = 0; i < this.state.info2.length ; i++) {
+                     this.state.times.push(this.state.info2[i].time);
+                }
+                 this.setState({value2: this.state.info2[this.state.info2.length - 1].time})
+                 this.setState({
+                    index2: this.state.info2.map((e) => {
+                        return e.time
+                    }).indexOf(this.state.value2)
+                });
             })
+           
     }
 
     render() {
@@ -97,19 +122,16 @@ export default class FetchData extends React.Component {
                                         year see the change!
                                     </h1>
                                     <select className="rounded px-3 titulo2 hover:bg-black hover:text-white" id="lang"
-                                            onChange={this.handleChange} value={this.state.value}>
-                                        {this.state.anos.map((ano) =>
-                                            <option key={ano} value={ano}>{ano}</option>)}
+                                            onChange={this.handleChange2} value={this.state.value2}>
+                                        {this.state.times.map((time) =>
+                                            <option key={time} value={time}>{time}</option>)}
                                     </select>
-                                    {this.state.info && this.state.index ? (<>
-                                        <div className="text-white pt-4 titulo2 text-md">
-                                            <p>Time: {this.state.info[this.state.index].time}</p>
-                                        </div>
+                                    {this.state.info2 && this.state.index2 ? (<>
                                         <div className="text-white titulo2 text-md">
-                                            <p>Station: {this.state.info[this.state.index].station}</p>
+                                            <p>Station: {this.state.info2[this.state.index2].station}</p>
                                         </div>
                                         <div className="text-white titulo2 text-md pb-3">
-                                            <p>Land: {this.state.info[this.state.index].land}</p>
+                                            <p>Land: {this.state.info2[this.state.index2].land}</p>
                                         </div>
                                     </>) : (<div>loading...</div>)}
                                 </div>
