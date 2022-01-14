@@ -16,15 +16,17 @@ export default class FetchData extends React.Component {
 
     handleChange(event){
         this.setState({value: event.target.value});
-        this.setState({index: this.state.info.map((e) => {return e.year}).indexOf(this.state.value)})
+        this.setState({index: this.state.info.map((e) => {return e.year}).indexOf(event.target.value)})
         console.log(this.state.index);
     }
 
     async componentDidMount() {
-        const url = "https://global-warming.org/api/arctic-api";
-        const response = await fetch(url);
-        const data = await response.json();
-        this.setState({info: data.result, loading: false});
+        fetch("https://global-warming.org/api/arctic-api")
+        .then(function(response) {
+            return response.json();
+        })
+        .then((data) => {
+            this.setState({info: data.result, loading: false});
 
         for(let i = 0 ; i < this.state.info.length; i++){
             this.state.anos.push(this.state.info[i].year);
@@ -32,6 +34,8 @@ export default class FetchData extends React.Component {
         this.setState({value: this.state.info[this.state.info.length-1].year})
         this.setState({index: this.state.info.map((e) => {return e.year}).indexOf(this.state.value)});
         console.log(this.state.index);
+    
+        });
     }
 
     render() {
