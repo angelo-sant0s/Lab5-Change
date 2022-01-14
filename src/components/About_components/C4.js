@@ -34,7 +34,7 @@ export default class FetchData extends React.Component {
         this.setState({value: this.state.info[this.state.info.length-1].year})
         this.setState({index: this.state.info.map((e) => {return e.year}).indexOf(this.state.value)});
         console.log(this.state.index);
-    
+
         });
     }
 
@@ -48,30 +48,36 @@ export default class FetchData extends React.Component {
                     <div className="flex mb-4 gap-2">
                         <div className="w-1/2 bg-neutral-900 h-72">
                             <div className="border-2 text-black m-4">
-                                <div>
-                                    {this.state.loading || !this.state.info ? (<div>loading...</div>) : (
-                                        <div>
-                                            <div>{this.state.info[this.state.info.length-1].year}</div>
-                                            <div>{this.state.info[this.state.info.length-1].extent}</div>
-                                            <div>{this.state.info[this.state.info.length-1].area}</div>
-                                        </div>
-                                    )}
-                                </div>
-                                <div>
-                                    <select id="lang" onChange={this.handleChange} value={this.state.value}>
+                                <div className="titulo2 font-semibold text-white text-right tracking-tight pr-5 py-3 text-lg">01</div>
+                                <div className="titulo1 text-white  pl-5  text-2xl">Melted Polar Ice Caps </div>
+                                <div className="pl-5">
+                                    <h1 className="titulo2 uppercase text-white tracking-tight text-md pb-5">See the year see the change!</h1>
+                                    <select className="rounded px-3 titulo2 hover:bg-black hover:text-white" id="lang" onChange={this.handleChange} value={this.state.value}>
                                         {this.state.anos.map((ano) =>
                                             <option key={ano} value={ano}>{ano}</option>)}
                                     </select>
                                     {this.state.info && this.state.index ? ( <>
-                                        <div>{this.state.info[this.state.index].year}</div>
-                                        <div>{this.state.info[this.state.index].extent}</div>
-                                        <div>{this.state.info[this.state.index].area}</div>
+                                        <div className="text-white pt-4 titulo2 text-md"><p>Extent: {this.state.info[this.state.index].extent}</p></div>
+                                        <div className="text-white titulo2 text-md pb-9"><p>Area: {this.state.info[this.state.index].area}</p></div>
                                     </>) : (<div>loading...</div>) }
                                 </div>
                             </div>
                         </div>
                         <div className="w-1/2 bg-neutral-900 h-72">
-                            <div className="border-2 pb-64 m-4"></div>
+                            <div className="border-2 pb-64 m-4">
+                                <div className="titulo2 font-semibold text-white text-right tracking-tight pr-5 py-3 text-lg">01</div>
+                                <div className="titulo1 text-white  pl-5  text-2xl">Melted Polar Ice Caps </div>
+                                <div className="pl-5">
+                                    <h1 className="titulo2 uppercase text-white tracking-tight text-md pb-5">See the year see the change!</h1>
+                                    <select className="rounded px-3 titulo2 hover:bg-black hover:text-white" id="lang" onChange={this.handleChange} value={this.state.value}>
+                                        {this.state.anos.map((ano) =>
+                                            <option key={ano} value={ano}>{ano}</option>)}
+                                    </select>
+                                    {this.state.info && this.state.index ? ( <>
+                                        <div className="text-white pt-4 titulo2 text-md"><p>Extent: {this.state.info[this.state.index].extent}</p></div>
+                                        <div className="text-white titulo2 text-md pb-9"><p>Area: {this.state.info[this.state.index].area}</p></div>
+                                    </>) : (<div>loading...</div>) }
+                                </div></div>
                         </div>
                     </div>
                     <div className="flex gap-2 pb-24">
