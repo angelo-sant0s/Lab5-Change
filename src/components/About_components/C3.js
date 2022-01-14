@@ -1,3 +1,5 @@
+import React from "react";
+
 const C3 = () => {
     return (
         <>
@@ -6,7 +8,7 @@ const C3 = () => {
                     <h1 className="text-9xl font-bold titulo1 text-center big">01</h1>
                     <div className="col-start-2">
                         <div className="w-1/2 -mr-96 border-t-2"></div>
-                        <h1 className="text-5xl font-bold titulo1 uppercase pt-5">Como Vai</h1>
+                        <h1 className="text-5xl font-bold titulo1 uppercase pt-5">Melted Polar Ice Caps</h1>
                         <p className="text-2xl titulo2 font-extralight text-justify pt-5">Lorem ipsum dolor sit amet,
                             consectetuer adipiscing elit,
                             sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat
@@ -32,7 +34,7 @@ const C3 = () => {
             <div className="grid grid-cols-3  text-white gap-11 py-24 ">
                 <div className="col-start-2">
                     <div className="w-1/2 -mr-96 border-t-2"></div>
-                    <h1 className="text-5xl font-bold titulo1 uppercase pt-5">Como Vai</h1>
+                    <h1 className="text-5xl font-bold titulo1 uppercase pt-5">Global Temperature Anomalies</h1>
                     <p className="text-2xl titulo2 font-extralight text-justify pt-5">Lorem ipsum dolor sit amet,
                         consectetuer adipiscing elit,
                         sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat
