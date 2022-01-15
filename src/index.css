@@ -26,10 +26,26 @@ body {
     font-size: 15rem;
 }
 
+.about2-bg{
+    background-image: url("/src/assets/imgs/Climate1_edit.jpg");
+    background-repeat: no-repeat;
+    background-position: right;
+    height: 100%;
+    width: 100%;
+}
+
 .about-bg{
     background-image: url("/src/assets/imgs/img-original.jpg");
     background-repeat: no-repeat;
     background-position: right;
+    height: 100%;
+    width: 100%;
+}
+
+.about3-bg{
+    background-image: url("/src/assets/imgs/Space.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
     height: 100%;
     width: 100%;
 }
