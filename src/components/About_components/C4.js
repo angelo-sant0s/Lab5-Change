@@ -133,7 +133,6 @@ export default class FetchData extends React.Component {
             })
             .then((data) => {
                 this.setState({info3: data.methane, loading3: false});
-                console.log(this.state.info3)
                 for (let i = 0; i < this.state.info3.length; i++) {
                     this.state.dates.push(this.state.info3[i].date);
                 }
@@ -294,7 +293,7 @@ export default class FetchData extends React.Component {
                                     <select className="rounded px-3 titulo2 hover:bg-black hover:text-white" id="lang"
                                             onChange={this.handleChange4} value={this.state.value}>
                                         {this.state.anos2.map((ano2) =>
-                                            <option key={ano2} value={ano2}>{ano2}</option>)}
+                                            <option  value={ano2}>{ano2}</option>)}
                                     </select>
                                     {this.state.info4 && this.state.index4 ? (<>
                                         <div className="text-white pt-4 titulo2 text-md">

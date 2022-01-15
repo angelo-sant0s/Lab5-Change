@@ -1,4 +1,5 @@
 import React from "react";
+import Donut from "./Graphs/Donut";
 
 const C3 = () => {
     return (
@@ -70,7 +71,8 @@ const C3 = () => {
                         sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat
                     </p>
                 </div>
-                <div className="">
+                <div className="col-start-2">
+                    <Donut />
                 </div>
                 <div className="col-start-3">
                     <p className="text-xl titulo2 font-extralight text-justify pt-5">Lorem ipsum dolor sit amet,
