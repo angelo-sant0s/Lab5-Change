@@ -58,14 +58,15 @@ const C3 = () => {
                     </p>
                 </div>
             </div>
-            <div className="grid grid-cols-3 grid-rows-2 text-center  text-white  pt-24 px-32 ">
-                <div className="col-start-1">
+            <div className="grid grid-cols-3 gap-5 text-center  text-white  pt-32 px-32 ">
+                <div className="col-start-1 pr-8">
                     <p className="text-xl titulo2 font-extralight text-justify pt-5">Lorem ipsum dolor sit amet,
                         consectetuer adipiscing elit,
                         sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat
+                        Lorem ipsum dolor sit amet,
+                        consectetuer adipiscing elit,
+                        sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat
                     </p>
-                </div>
-                <div className="col-start-1">
                     <p className="text-xl titulo2 font-extralight text-justify pt-5">Lorem ipsum dolor sit amet,
                         consectetuer adipiscing elit,
                         sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat
@@ -74,14 +75,14 @@ const C3 = () => {
                 <div className="col-start-2">
                     <Donut />
                 </div>
-                <div className="col-start-3">
+                <div className="col-start-3 pl-2">
                     <p className="text-xl titulo2 font-extralight text-justify pt-5">Lorem ipsum dolor sit amet,
                         consectetuer adipiscing elit,
                         sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat
                     </p>
                 </div>
             </div>
-            <div className="grid grid-cols-2  pt-32">
+            <div className="grid grid-cols-2  pt-48">
                 <div className="cols-span-2">
                     <img className="" alt="img1"
                          src="https://i.imgur.com/mlkT4Hp.png"/>

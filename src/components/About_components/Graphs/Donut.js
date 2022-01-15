@@ -6,10 +6,10 @@ import { Text } from "@visx/text";
 const Donut = () => {
 
     const dados = [
-        {symbol: "Methane", amount: "CH4", color: "cyan", percentage: 10},
-        {symbol: "Carbon Dioxide", amount: "CO2", color: "green", percentage: 80},
-        {symbol: "Nitrous oxide", amount: "N2O", color: "red",  percentage: 7},
-        {symbol: "Fluorinated gases", amount: "N2O", color: "yellow", percentage: 3}
+        {symbol: "Methane", amount: "CH4", color: "Azure", percentage: 10},
+        {symbol: "Carbon Dioxide", amount: "CO2", color: "CadetBlue", percentage: 80},
+        {symbol: "Nitrous oxide", amount: "N2O", color: "AliceBlue",  percentage: 7},
+        {symbol: "Fluorinated gases", amount: "N2O", color: "Beige", percentage: 3}
     ];
     const [active, setActive] = useState(null);
 
