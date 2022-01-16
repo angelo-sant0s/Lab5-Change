@@ -58,7 +58,72 @@ const C3 = () => {
                     </p>
                 </div>
             </div>
-            <div className="grid grid-cols-3 gap-5 text-center  text-white  pt-32 px-32 ">
+
+            <div className="grid grid-cols-2  pt-48">
+                <div className="cols-span-2">
+                    <img className="" alt="img1"
+                         src="https://i.imgur.com/mlkT4Hp.png"/>
+                </div>
+                <div className=" text-white px-28 pt-24">
+                    <h1 className="text-5xl titulo1 text-white tracking-tight uppercase pb-11">Puripi</h1>
+                    <p className="text-xl titulo2 font-extralight text-justify pt-5">Lorem ipsum dolor sit amet,
+                        consectetuer adipiscing elit,
+                        sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat
+                    </p>
+                    <p className="text-xl titulo2 font-extralight text-justify pt-5">Lorem ipsum dolor sit amet,
+                        consectetuer adipiscing elit,
+                        sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat
+                    </p>
+                    <p className="text-xl titulo2 font-extralight text-justify pt-5">Lorem ipsum dolor sit amet.
+                    </p>
+                </div>
+            </div>
+            <div className="grid grid-cols-2  text-white gap-11 py-48 ">
+                <div className="pl-40">
+                    <div className="w-1/2 -mr-96 border-t-2"></div>
+                    <h1 className="text-5xl font-bold titulo1 uppercase pt-5">Carbon Dioxide</h1>
+                    <p className="text-2xl titulo2 font-extralight text-justify pt-5 pr-24">Lorem ipsum dolor sit amet,
+                        consectetuer adipiscing elit,
+                        sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat
+                    </p>
+                </div>
+                <h1 className="text-9xl font-bold titulo1 text-center big">04</h1>
+            </div>
+            <div className="about3-bg py-2 px-40">
+                <h1 className="font-medium text-white tracking-tight text-3xl pb-11">Carbon Dioxide</h1>
+                <div className="grid grid-cols-3 gap-24 text-justify">
+                    <p className="text-2xl titulo2 text-white font-extralight pb-80">Lorem ipsum dolor sit amet.
+                    </p>
+                    <p className="text-2xl titulo2 text-white font-extralight">Lorem ipsum dolor sit amet.
+                    </p>
+                    <p className="text-2xl titulo2 text-white font-extralight">Lorem ipsum dolor sit amet.
+                    </p>
+                </div>
+            </div>
+            <div className="about4-bg">
+                <div className="grid grid-cols-4  gap-11 text-white  py-24 ">
+                    <h1 className="pl-20 text-9xl font-bold titulo1 text-center big pt-11">05</h1>
+                    <div className="col-span-2 pl-36 px-20 pt-11">
+                        <div className="w-1/2 -mr-96 border-t-2"></div>
+                        <h1 className="text-5xl font-bold titulo1 uppercase pt-5">Nitrous Oxide</h1>
+                        <p className="text-2xl titulo2 font-extralight text-justify pt-5 pr-11">Lorem ipsum dolor sit
+                            amet,
+                            consectetuer adipiscing elit,
+                            sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat
+                        </p>
+                        <p className="text-2xl titulo2 font-extralight text-justify pt-5 pr-11">Lorem ipsum dolor sit
+                            amet,
+                            consectetuer adipiscing elit,
+                            sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat
+                        </p>
+                        <p className="text-2xl titulo2 font-extralight text-justify pt-5 pr-11">Lorem ipsum dolor sit
+                            amet.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+            <div className="grid grid-cols-3 gap-5 text-center  text-white  pt-48 pb-28 px-32 ">
                 <div className="col-start-1 pr-8">
                     <p className="text-xl titulo2 font-extralight text-justify pt-5">Lorem ipsum dolor sit amet,
                         consectetuer adipiscing elit,
@@ -73,7 +138,7 @@ const C3 = () => {
                     </p>
                 </div>
                 <div className="col-start-2">
-                    <Donut />
+                    <Donut/>
                 </div>
                 <div className="col-start-3 pl-2">
                     <p className="text-xl titulo2 font-extralight text-justify pt-5">Lorem ipsum dolor sit amet,
@@ -81,39 +146,6 @@ const C3 = () => {
                         sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat
                     </p>
                 </div>
-            </div>
-            <div className="grid grid-cols-2  pt-48">
-                <div className="cols-span-2">
-                    <img className="" alt="img1"
-                         src="https://i.imgur.com/mlkT4Hp.png"/>
-                </div>
-                <div className=" text-white px-28 pt-24">
-                    <div className="w-1/2 -mr-96 border-t-2"></div>
-                    <h1 className="text-5xl font-bold titulo1 uppercase pt-5">Puripi</h1>
-                    <p className="text-xl titulo2 font-extralight text-justify pt-5">Lorem ipsum dolor sit amet,
-                        consectetuer adipiscing elit,
-                        sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat
-                    </p>
-                    <p className="text-xl titulo2 font-extralight text-justify pt-5">Lorem ipsum dolor sit amet,
-                        consectetuer adipiscing elit,
-                        sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat
-                    </p>
-                    <p className="text-xl titulo2 font-extralight text-justify pt-5">Lorem ipsum dolor sit amet.
-                    </p>
-                </div>
-            </div>
-            <div className="grid grid-cols-3  text-white gap-11 py-48 ">
-                <h1 className="text-9xl font-bold titulo1 text-center big">04</h1>
-                <div className="col-start-2">
-                    <div className="w-1/2 -mr-96 border-t-2"></div>
-                    <h1 className="text-5xl font-bold titulo1 uppercase pt-5">Carbon Dioxide</h1>
-                    <p className="text-2xl titulo2 font-extralight text-justify pt-5">Lorem ipsum dolor sit amet,
-                        consectetuer adipiscing elit,
-                        sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat
-                    </p>
-                </div>
-            </div>
-            <div className="about3-bg py-80 px-80">
             </div>
         </>
     )

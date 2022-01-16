@@ -50,6 +50,15 @@ body {
     width: 100%;
 }
 
+.about4-bg{
+    background-image: url("/src/assets/imgs/Space2.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100%;
+    width: 100%;
+}
+
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
