@@ -78,7 +78,7 @@ const C3 = () => {
                     </p>
                 </div>
             </div>
-            <div className="grid grid-cols-2  text-white gap-11 py-48 ">
+            <div className="grid grid-cols-2  text-white gap-11 pt-48 pb-11 ">
                 <div className="pl-40">
                     <div className="w-1/2 -mr-96 border-t-2"></div>
                     <h1 className="text-5xl font-bold titulo1 uppercase pt-5">Carbon Dioxide</h1>
@@ -87,7 +87,7 @@ const C3 = () => {
                         sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat
                     </p>
                 </div>
-                <h1 className="text-9xl font-bold titulo1 text-center big">04</h1>
+                <h1 className="text-9xl pl-16 font-bold titulo1 text-center big">04</h1>
             </div>
             <div className="about3-bg py-2 px-40">
                 <h1 className="font-medium text-white tracking-tight text-3xl pb-11">Carbon Dioxide</h1>

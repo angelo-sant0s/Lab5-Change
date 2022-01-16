@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const Footer = () => {
 
     return (
-        <div className="bg-gradient-to-r from-neutral-800 to-neutral-900 mt-80 md:w-full lg:w-9/12 grid pt-6 pb-5 grid-cols-8 gap-3 ">
+        <div className="bg-gradient-to-r from-neutral-800 to-neutral-900 mt-28 md:w-full lg:w-9/12 grid pt-6 pb-5 grid-cols-8 gap-3 ">
             <section className="yum text-center col-start-1 col-end-2 text-neutral-400 texto2 font-thin  text-3xl ">
                 <Link  className="pt-2" to="/">Home</Link>
                 <Link  className="pt-11 pb-11" to="/About">About</Link>

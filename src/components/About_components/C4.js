@@ -335,7 +335,7 @@ export default class FetchData extends React.Component {
                             </div>
                         </div>
                     </div>
-                    <Link className="btn px-8 py-3 titulo2 text-2xl" to="/Profile">Find Yours</Link>
+                    <Link className="btn px-8 pt-3 titulo2 text-2xl" to="/Profile">Find Yours</Link>
                 </div>
             </>
         )
