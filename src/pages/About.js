@@ -12,7 +12,7 @@ const About = () => {
             <C2 />
             <C3 />
             <C4 />
-            <Footer/>
+            <Footer />
         </>
 
 

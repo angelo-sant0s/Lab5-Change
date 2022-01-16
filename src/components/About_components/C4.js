@@ -183,8 +183,6 @@ export default class FetchData extends React.Component {
     }
 
     render() {
-
-
         return (
             <>
                 <div className="container mx-auto px-20 mt-20">
@@ -192,7 +190,6 @@ export default class FetchData extends React.Component {
                     <div className="flex mb-4 gap-2">
                         <div className="w-1/2 bg-neutral-900 h-72">
                             <div className="border-2 text-black m-4">
-
                                 <div
                                     className="titulo2 font-semibold text-white text-right tracking-tight pr-5 py-3 text-lg">
                                     01
@@ -216,12 +213,10 @@ export default class FetchData extends React.Component {
                                         </div>
                                     </>) : (<div className="text-white">loading...</div>)}
                                 </div>
-
                             </div>
                         </div>
                         <div className="w-1/2 bg-neutral-900 h-72">
                             <div className="border-2 m-4">
-
                                 <div
                                     className="titulo2 font-semibold text-white text-right tracking-tight pr-5 py-3 text-lg">
                                     02
@@ -245,14 +240,12 @@ export default class FetchData extends React.Component {
                                         </div>
                                     </>) : (<div className="text-white">loading...</div>)}
                                 </div>
-
                             </div>
                         </div>
                     </div>
                     <div className="flex gap-2 pb-24">
                         <div className="w-1/5 bg-neutral-900 h-96">
                             <div className="border-2  m-6">
-
                                 <div
                                     className="titulo2 font-semibold text-white text-right tracking-tight pr-5 py-3 text-lg">
                                     03
@@ -280,7 +273,6 @@ export default class FetchData extends React.Component {
                         </div>
                         <div className="w-3/5 bg-neutral-900 h-96">
                             <div className="border-2 m-6">
-
                                 <div
                                     className="titulo2 font-semibold text-white text-right tracking-tight pr-5 py-3 text-lg">
                                     04
@@ -308,7 +300,6 @@ export default class FetchData extends React.Component {
                         </div>
                         <div className="w-1/5 bg-neutral-900 h-96">
                             <div className="border-2 m-6">
-
                                 <div
                                     className="titulo2 font-semibold text-white text-right tracking-tight pr-5 py-3 text-lg">
                                     05

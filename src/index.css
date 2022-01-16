@@ -58,6 +58,14 @@ body {
     width: 100%;
 }
 
+.about5-bg{
+    background-image: url("/src/assets/imgs/Abstract.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100%;
+    width: 100%;
+}
+
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
