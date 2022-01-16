@@ -185,7 +185,7 @@ export default class FetchData extends React.Component {
     render() {
         return (
             <>
-                <div className="container mx-auto px-20 mt-20">
+                <div className="container mx-auto px-20 pt-3">
                     <h1 className="text-6xl font-bold uppercase text-white titulo1 py-11">Data</h1>
                     <div className="flex mb-4 gap-2">
                         <div className="w-1/2 bg-neutral-900 h-72">
