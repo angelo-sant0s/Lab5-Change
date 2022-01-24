@@ -1,8 +1,7 @@
-import React from "react";
+ import React from "react";
 import {createPopper} from "@popperjs/core";
 
 const Dropdown = ({color}) => {
-    // dropdown props
     const [dropdownPopoverShow, setDropdownPopoverShow] = React.useState(false);
     const btnDropdownRef = React.createRef();
     const popoverDropdownRef = React.createRef();
@@ -15,9 +14,9 @@ const Dropdown = ({color}) => {
     const closeDropdownPopover = () => {
         setDropdownPopoverShow(false);
     };
-    // bg colors
+
     let bgColor;
-    color === "white"
+    color === "black"
         ? (bgColor = "bg-black")
         : (bgColor = "bg-" + color + "-500");
     return (

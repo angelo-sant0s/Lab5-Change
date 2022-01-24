@@ -8,7 +8,7 @@ const C1 = () => {
     return (
         <>
             <div className="bg-neutral-900 pb-10">
-                <div className="about4-bg p-36 relative z-10">
+                <div className="about4-bg p-36 relative">
                 </div>
                 <div className="grid grid-cols-3 gap-11">
                     <div className=" container px-6 mx-auto">
