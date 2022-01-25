@@ -1,10 +1,22 @@
-import React from "react";
+import { useAuth } from '../../firebase-config';
+import React, {useEffect, useState} from "react";
 import {BiBarChart, BiLocationPlus, BiMailSend, BiCurrentLocation} from "react-icons/bi";
+import db from "../../firebase-config";
+import { collection, onSnapshot } from "firebase/firestore";
 
 
-const C1 = () => {
+const C1 = (props) => {
 
+    const currentUser = useAuth();
 
+    const [countries, setCountries] = useState([]);
+
+    useEffect(() => {
+        onSnapshot(collection(db,"Countries"),(snapshot) => {
+            setCountries(snapshot.docs.map((doc) => doc.data()));
+        });
+    }, []);
+    
     return (
         <>
             <div className="bg-neutral-900 pb-10">
@@ -24,7 +36,7 @@ const C1 = () => {
                                     <h5 className="font-medium tracking-tight titulo2 text-xl pt-5 mb-1">Andres
                                         Berlin
                                     </h5>
-                                    <p className="font-extralight text-md">VP Operations</p>
+                                    <p className="font-extralight text-md"></p>
                                 </div>
                                 <div className=" bg-white pl-5 pt-5 rounded-lg shadow">
                                     <ul className="divide-y-2 divide-gray-100">
@@ -38,7 +50,7 @@ const C1 = () => {
                                             <h1 className="pr-2 text-2xl">
                                                 <BiMailSend/>
                                             </h1>
-                                            Email
+                                            Email: 
                                         </li>
                                         <li className="flex p-3 font-light text-md">
                                             <h1 className="pr-2 text-2xl">
@@ -75,36 +87,18 @@ const C1 = () => {
                                                     país
                                                 </p>
                                                 <p className="font-extralight text-md pt-2 text-gray-500">4 opções</p>
+                                                        <div className="text-left pt-5 pl-3">    
+                                                            {countries.map((pais) => (
+                                                                <div className="text-left pt-5 pl-3">
+                                                                <div className="relative inline-block w-10 mr-2 align-middle select-none transition duration-200 ease-in">
+                                                                    <input type="checkbox" name="toggle" className="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer" value={pais.name} checked ={props.CountryCheck} onChange={props.handlecheck}/>
+                                                                    <label className="toggle-label block overflow-hidden h-6 rounded-full bg-gray-300 cursor-pointer"></label>
+                                                                </div>
+                                                                <label className="font-extralight text-md pt-2 tracking-tight text-gray-500">{pais.name}</label>
+                                                                </div>))}
+                                                    </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div className="text-left pt-5 pl-3">
-                                    <div className="relative inline-block w-10 mr-2 align-middle select-none transition duration-200 ease-in">
-                                        <input type="checkbox" name="toggle" id="toggle" className="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer"/>
-                                        <label for="toggle" className="toggle-label block overflow-hidden h-6 rounded-full bg-gray-300 cursor-pointer"></label>
-                                    </div>
-                                    <label for="toggle" className="font-extralight text-md pt-2 tracking-tight text-gray-500">Toggle me.</label>
-                                    </div>
-                                    <div className="text-left pt-5 pl-3">
-                                        <div className="relative inline-block w-10 mr-2 align-middle select-none transition duration-200 ease-in">
-                                            <input type="checkbox" name="toggle" id="toggle" className="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer"/>
-                                            <label for="toggle" className="toggle-label block overflow-hidden h-6 rounded-full bg-gray-300 cursor-pointer"></label>
-                                        </div>
-                                        <label for="toggle" className="font-extralight text-md pt-2 tracking-tight text-gray-500">Toggle me.</label>
-                                    </div>
-                                    <div className="text-left pt-5 pl-3">
-                                        <div className="relative inline-block w-10 mr-2 align-middle select-none transition duration-200 ease-in">
-                                            <input type="checkbox" name="toggle" id="toggle" className="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer"/>
-                                            <label for="toggle" className="toggle-label block overflow-hidden h-6 rounded-full bg-gray-300 cursor-pointer"></label>
-                                        </div>
-                                        <label for="toggle" className="font-extralight text-md pt-2 tracking-tight text-gray-500">Toggle me.</label>
-                                    </div>
-                                    <div className="text-left pt-5 pl-3">
-                                        <div className="relative inline-block w-10 mr-2 align-middle select-none transition duration-200 ease-in">
-                                            <input type="checkbox" name="toggle" id="toggle" className="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer"/>
-                                            <label for="toggle" className="toggle-label block overflow-hidden h-6 rounded-full bg-gray-300 cursor-pointer"></label>
-                                        </div>
-                                        <label for="toggle" className="font-extralight text-md pt-2 tracking-tight text-gray-500">Toggle me.</label>
                                     </div>
                                 </div>
                                 <div className="w-4/12 mr-7 mb-7 bg-white p-6 shadow rounded">
@@ -115,50 +109,27 @@ const C1 = () => {
                                                     gases
                                                 </p>
                                                 <p className="font-extralight text-md pt-2 text-gray-500">36 members</p>
+                                                <div className="text-left pt-5 pl-3">
+                                                                <div className="text-left pt-5 pl-3">
+                                                                <div className="relative inline-block w-10 mr-2 align-middle select-none transition duration-200 ease-in">
+                                                                    <input type="checkbox" name="toggle" className="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer"/>
+                                                                    <label className="toggle-label block overflow-hidden h-6 rounded-full bg-gray-300 cursor-pointer"></label>
+                                                                </div>
+                                                                <label className="font-extralight text-md pt-2 tracking-tight text-gray-500">Carbon Monoxide</label>
+                                                                </div>
+                                                    </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div className="px-2">
-                                        <div className="text-left pt-5 pl-3">
-                                            <div className="relative inline-block w-10 mr-2 align-middle select-none transition duration-200 ease-in">
-                                                <input type="checkbox" name="toggle" id="toggle" className="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer"/>
-                                                <label for="toggle" className="toggle-label block overflow-hidden h-6 rounded-full bg-gray-300 cursor-pointer"></label>
-                                            </div>
-                                            <label for="toggle" className="font-extralight text-md pt-2 tracking-tight text-gray-500">Toggle me.</label>
-                                        </div>
-                                        <div className="text-left pt-5 pl-3">
-                                            <div className="relative inline-block w-10 mr-2 align-middle select-none transition duration-200 ease-in">
-                                                <input type="checkbox" name="toggle" id="toggle" className="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer"/>
-                                                <label for="toggle" className="toggle-label block overflow-hidden h-6 rounded-full bg-gray-300 cursor-pointer"></label>
-                                            </div>
-                                            <label for="toggle" className="font-extralight text-md pt-2 tracking-tight text-gray-500">Toggle me.</label>
-                                        </div>
-                                        <div className="text-left pt-5 pl-3">
-                                            <div className="relative inline-block w-10 mr-2 align-middle select-none transition duration-200 ease-in">
-                                                <input type="checkbox" name="toggle" id="toggle" className="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer"/>
-                                                <label for="toggle" className="toggle-label block overflow-hidden h-6 rounded-full bg-gray-300 cursor-pointer"></label>
-                                            </div>
-                                            <label for="toggle" className="font-extralight text-md pt-2 tracking-tight text-gray-500">Toggle me.</label>
-                                        </div>
-                                        <div className="text-left pt-5 pl-3">
-                                            <div className="relative inline-block w-10 mr-2 align-middle select-none transition duration-200 ease-in">
-                                                <input type="checkbox" name="toggle" id="toggle" className="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer"/>
-                                                <label for="toggle" className="toggle-label block overflow-hidden h-6 rounded-full bg-gray-300 cursor-pointer"></label>
-                                            </div>
-                                            <label for="toggle" className="font-extralight text-md pt-2 tracking-tight text-gray-500">Toggle me.</label>
-                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div className="about4-bg p-48 ">
-            </div>
         </>
     )
-        ;
 
 }
-export default C1
+
+export default C1;

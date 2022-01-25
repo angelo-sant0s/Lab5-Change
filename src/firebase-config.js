@@ -1,6 +1,7 @@
 import { initializeApp } from "firebase/app";
 import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signOut } from 'firebase/auth'; 
 import { useState, useEffect } from "react";
+import {getFirestore} from "firebase/firestore";
 
 const config = {
   apiKey: "AIzaSyA9Ilb40O2dlZQR8xyzXVOYb3fsaRsXnNo",
@@ -38,3 +39,5 @@ export const useAuth = () => {
 
   return currentUser;
 }
+
+export default getFirestore();
