@@ -1,6 +1,6 @@
 import React from "react";
 import {BiBarChart, BiLocationPlus, BiMailSend, BiCurrentLocation} from "react-icons/bi";
-import Dropdown from "./Dropdown/Países";
+
 
 const C1 = () => {
 
@@ -46,7 +46,7 @@ const C1 = () => {
                                             </h1>
                                             Opções Associadas
                                         </li>
-                                        <li className="flex p-3 mb-28 font-light text-md">
+                                        <li className="flex p-3 mb-36 font-light text-md">
                                             <h1 className="pr-2 text-2xl">
                                                 <BiLocationPlus/>
                                             </h1>
@@ -71,31 +71,82 @@ const C1 = () => {
                                     <div className="flex items-center border-b border-gray-200 pb-6">
                                         <div className="flex items-start justify-between w-full">
                                             <div className="pl-3 text-left ">
-                                                <p className="text-xl font-medium leading-5 text-gray-800">Escolhe o
+                                                <p className="font-medium tracking-tight titulo2 text-xl leading-5 text-gray-800">Escolhe o
                                                     país
                                                 </p>
-                                                <p className="text-sm leading-normal pt-2 text-gray-500">4 opções</p>
+                                                <p className="font-extralight text-md pt-2 text-gray-500">4 opções</p>
                                             </div>
                                         </div>
                                     </div>
-                                    <Dropdown/>
+                                    <div className="text-left pt-5 pl-3">
+                                    <div className="relative inline-block w-10 mr-2 align-middle select-none transition duration-200 ease-in">
+                                        <input type="checkbox" name="toggle" id="toggle" className="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer"/>
+                                        <label for="toggle" className="toggle-label block overflow-hidden h-6 rounded-full bg-gray-300 cursor-pointer"></label>
+                                    </div>
+                                    <label for="toggle" className="font-extralight text-md pt-2 tracking-tight text-gray-500">Toggle me.</label>
+                                    </div>
+                                    <div className="text-left pt-5 pl-3">
+                                        <div className="relative inline-block w-10 mr-2 align-middle select-none transition duration-200 ease-in">
+                                            <input type="checkbox" name="toggle" id="toggle" className="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer"/>
+                                            <label for="toggle" className="toggle-label block overflow-hidden h-6 rounded-full bg-gray-300 cursor-pointer"></label>
+                                        </div>
+                                        <label for="toggle" className="font-extralight text-md pt-2 tracking-tight text-gray-500">Toggle me.</label>
+                                    </div>
+                                    <div className="text-left pt-5 pl-3">
+                                        <div className="relative inline-block w-10 mr-2 align-middle select-none transition duration-200 ease-in">
+                                            <input type="checkbox" name="toggle" id="toggle" className="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer"/>
+                                            <label for="toggle" className="toggle-label block overflow-hidden h-6 rounded-full bg-gray-300 cursor-pointer"></label>
+                                        </div>
+                                        <label for="toggle" className="font-extralight text-md pt-2 tracking-tight text-gray-500">Toggle me.</label>
+                                    </div>
+                                    <div className="text-left pt-5 pl-3">
+                                        <div className="relative inline-block w-10 mr-2 align-middle select-none transition duration-200 ease-in">
+                                            <input type="checkbox" name="toggle" id="toggle" className="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer"/>
+                                            <label for="toggle" className="toggle-label block overflow-hidden h-6 rounded-full bg-gray-300 cursor-pointer"></label>
+                                        </div>
+                                        <label for="toggle" className="font-extralight text-md pt-2 tracking-tight text-gray-500">Toggle me.</label>
+                                    </div>
                                 </div>
                                 <div className="w-4/12 mr-7 mb-7 bg-white p-6 shadow rounded">
                                     <div className="flex items-center border-b border-gray-200 pb-6">
                                         <div className="flex items-start justify-between w-full">
                                             <div className="pl-3 text-left ">
-                                                <p className="text-xl font-medium leading-5 text-gray-800">Escolhe os
+                                                <p className="font-medium tracking-tight titulo2 text-xl leading-5 text-gray-800">Escolhe os
                                                     gases
                                                 </p>
-                                                <p className="text-sm leading-normal pt-2 text-gray-500">36 members</p>
+                                                <p className="font-extralight text-md pt-2 text-gray-500">36 members</p>
                                             </div>
                                         </div>
                                     </div>
                                     <div className="px-2">
-                                        <p className="text-sm leading-5 py-4 text-gray-600">A group of people interested
-                                            in dogecoin, the currency and a bit of side for the meme and dof that we all
-                                            know and love. These cases are perfectly simple and easy to distinguish.
-                                        </p>
+                                        <div className="text-left pt-5 pl-3">
+                                            <div className="relative inline-block w-10 mr-2 align-middle select-none transition duration-200 ease-in">
+                                                <input type="checkbox" name="toggle" id="toggle" className="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer"/>
+                                                <label for="toggle" className="toggle-label block overflow-hidden h-6 rounded-full bg-gray-300 cursor-pointer"></label>
+                                            </div>
+                                            <label for="toggle" className="font-extralight text-md pt-2 tracking-tight text-gray-500">Toggle me.</label>
+                                        </div>
+                                        <div className="text-left pt-5 pl-3">
+                                            <div className="relative inline-block w-10 mr-2 align-middle select-none transition duration-200 ease-in">
+                                                <input type="checkbox" name="toggle" id="toggle" className="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer"/>
+                                                <label for="toggle" className="toggle-label block overflow-hidden h-6 rounded-full bg-gray-300 cursor-pointer"></label>
+                                            </div>
+                                            <label for="toggle" className="font-extralight text-md pt-2 tracking-tight text-gray-500">Toggle me.</label>
+                                        </div>
+                                        <div className="text-left pt-5 pl-3">
+                                            <div className="relative inline-block w-10 mr-2 align-middle select-none transition duration-200 ease-in">
+                                                <input type="checkbox" name="toggle" id="toggle" className="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer"/>
+                                                <label for="toggle" className="toggle-label block overflow-hidden h-6 rounded-full bg-gray-300 cursor-pointer"></label>
+                                            </div>
+                                            <label for="toggle" className="font-extralight text-md pt-2 tracking-tight text-gray-500">Toggle me.</label>
+                                        </div>
+                                        <div className="text-left pt-5 pl-3">
+                                            <div className="relative inline-block w-10 mr-2 align-middle select-none transition duration-200 ease-in">
+                                                <input type="checkbox" name="toggle" id="toggle" className="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer"/>
+                                                <label for="toggle" className="toggle-label block overflow-hidden h-6 rounded-full bg-gray-300 cursor-pointer"></label>
+                                            </div>
+                                            <label for="toggle" className="font-extralight text-md pt-2 tracking-tight text-gray-500">Toggle me.</label>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
