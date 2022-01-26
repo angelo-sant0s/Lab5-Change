@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import C1 from '../components/Profile/C1'
-import C2 from '../components/Profile/C2'
-import C3 from '../components/Profile/C3'
-import Footer from '../components/Footer/Footer'
+import C1 from '../components/Profile_components/C1'
+import C2 from '../components/Profile_components/C2'
+import C3 from '../components/Profile_components/C3'
+import Footer from '../components/Footer_components/Footer'
 
 
 const Profile = () => {

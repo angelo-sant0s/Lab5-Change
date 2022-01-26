@@ -6,8 +6,8 @@ import { Text } from "@visx/text";
 const Donut = () => {
 
     const dados = [
-        {symbol: "Methane", amount: "CH4", color: "Azure", percentage: 10},
-        {symbol: "Carbon Dioxide", amount: "CO2", color: "CadetBlue", percentage: 80},
+        {symbol: "Methane", amount: "CH4", color: "Gainsboro", percentage: 10},
+        {symbol: "Carbon Dioxide", amount: "CO2", color: "DimGray", percentage: 80},
         {symbol: "Nitrous oxide", amount: "N2O", color: "AliceBlue",  percentage: 7},
         {symbol: "Fluorinated gases", amount: "N2O", color: "Beige", percentage: 3}
     ];

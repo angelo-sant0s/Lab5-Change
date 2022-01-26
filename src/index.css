@@ -37,7 +37,16 @@ body {
 }
 
 .about3-bg{
-    background-image: url("/src/assets/imgs/Space.png");
+    background-image: url("/src/assets/imgs/Methane.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    height: 350px;
+    width: 100%;
+}
+.about6-bg{
+    background-image: url("/src/assets/imgs/cows2.png");
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
@@ -45,7 +54,6 @@ body {
     height: 100%;
     width: 100%;
 }
-
 .about4-bg{
     background-image: url("/src/assets/imgs/Space2.jpg");
     background-repeat: no-repeat;
@@ -64,11 +72,14 @@ body {
     width: 100%;
 }
 
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.earth {
+    background-image: url("/src/assets/imgs/earth.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100%;
+    width: 100%;
 }
+
 .header {
     position:fixed;
     height: 90px;
@@ -125,6 +136,19 @@ code {
 
 }
 
+.titulo3{
+
+    font-family: 'Horizon', sans-serif;
+}
+
+.titulo4{
+
+    font-family: 'doctor_glitch', sans-serif;
+
+}
+
+
+
 .yum{
     border-right: 1px solid white;
     padding-right: 10px;
@@ -132,13 +156,6 @@ code {
     text-orientation: mixed;
 
 }
-
-.titulo3{
-
-    font-family: 'Horizon', sans-serif;
-}
-
-
 
 .btn{
     @apply rounded-full py-3 px-11 cursor-pointer bg-white text-black hover:bg-black hover:text-white
@@ -148,10 +165,6 @@ code {
 .btn2{
     @apply rounded-full py-3 px-11 cursor-pointer bg-black text-white opacity-95 hover:opacity-100 hover:drop-shadow-xl
 }
-
-
-
-.ativo:hover{font-weight: 100}
 
 .toggle-checkbox:checked {
     @apply: right-0 border-green-400;
