@@ -162,3 +162,10 @@ code {
     @apply: bg-green-400;
     background-color: #333333;
 }
+
+.gallery-cell {
+    height: 500px;
+
+}
+
+

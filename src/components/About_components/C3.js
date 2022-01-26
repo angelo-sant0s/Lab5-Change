@@ -1,5 +1,6 @@
 import React from "react";
 import Donut from "./Graphs/Donut";
+import Carrosel from "./Carossel/Carrosel";
 
 const C3 = () => {
     return (
@@ -44,8 +45,8 @@ const C3 = () => {
                 <h1 className="text-9xl font-bold titulo1 text-center big">02</h1>
             </div>
 
-            <img className="w-screen" alt="img1"
-                 src="https://images.unsplash.com/photo-1615092296061-e2ccfeb2f3d6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"/>
+           <Carrosel />
+
             <div className="grid grid-cols-2  text-white gap-11 pt-48 pb-11 ">
                 <div className="pl-40">
                     <div className="w-1/2 -mr-96 border-t-2"></div>
