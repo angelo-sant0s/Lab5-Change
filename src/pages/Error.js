@@ -1,5 +1,6 @@
 import React from 'react'
 import {Link} from "react-router-dom";
+import Earth  from "../assets/imgs/earth.png";
 
 const Error = () => {
     return (
@@ -11,10 +12,11 @@ const Error = () => {
                     <Link to="/">GO TO HOME</Link>
                 </button>
             </div>
-            <div className="earth">
+            <div className="">
+                <img src={Earth} />
             </div>
         </div>
     )
 }
 
-export default Error
+export default Error;
