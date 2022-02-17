@@ -1,14 +1,12 @@
-import { useAuth } from '../../firebase-config';
+
 import React, {useEffect, useState} from "react";
 import {BiBarChart, BiLocationPlus, BiMailSend, BiCurrentLocation} from "react-icons/bi";
 import db from "../../firebase-config";
+import { useAuth } from '../../firebase-config';
 import { collection, onSnapshot } from "firebase/firestore";
 
 
 const C1 = (props) => {
-
-    const currentUser = useAuth();
-
     const [countries, setCountries] = useState([]);
 
     useEffect(() => {
@@ -89,7 +87,7 @@ const C1 = (props) => {
                                                 <p className="font-extralight text-md pt-2 text-gray-500">4 opções</p>
                                                         <div className="text-left pt-5 pl-3">    
                                                             {countries.map((pais) => (
-                                                                <div className="text-left pt-5 pl-3">
+                                                                <div className="text-left pt-5 pl-3" key={pais.name}>
                                                                 <div className="relative inline-block w-10 mr-2 align-middle select-none transition duration-200 ease-in">
                                                                     <input type="checkbox" name="toggle" className="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer" value={pais.name} checked ={props.CountryCheck} onChange={props.handlecheck}/>
                                                                     <label className="toggle-label block overflow-hidden h-6 rounded-full bg-gray-300 cursor-pointer"></label>

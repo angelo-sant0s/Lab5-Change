@@ -42,7 +42,7 @@ const Navbar = ({toggle}) => {
                 <div className='pr-8 md:block hidden navlinks'>
                     <Link className='p-5 ativo' to="/">Home</Link>
                     <Link className='p-5 ativo' to="/About">About</Link>
-                    { !currentUser ? <Link className='p-5 ativo' to="/Login">Login</Link> : <Link className='p-5 ativo' to={`/Profile/${currentUser.email}`}>Profile</Link> }
+                    { !currentUser ? <Link className='p-5 ativo' to="/Login">Login</Link> : <Link className='p-5 ativo' to={`/Profile/${currentUser.uid}`}>Profile</Link> }
                     { currentUser ? <Link className='p-5 ativo' to="/" onClick={handleLogout}>Logout</Link> : ""}
                 </div>
             </nav>
