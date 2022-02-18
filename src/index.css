@@ -72,6 +72,21 @@ body {
     width: 100%;
 }
 
+.showcase{
+    background-image: url("/src/assets/imgs/news.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 700px;
+}
+.showcase .overlay{
+    background-color: rgba(0,0,0,.5);
+    height: 700px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .earth {
     background-image: url("/src/assets/imgs/earth.png");
     background-repeat: no-repeat;
