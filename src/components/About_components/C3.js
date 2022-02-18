@@ -7,6 +7,7 @@ const C3 = () => {
     return (
         <>
             <div className="about2-bg">
+                <a id="Melted Ice Caps"></a>
                 <div className="grid grid-cols-3  text-white gap-11 py-16 ">
                     <h1 className="text-9xl font-bold titulo1 text-center big">01</h1>
                     <div className="col-start-2">
@@ -42,6 +43,7 @@ const C3 = () => {
             </div>
 
             <div className="grid grid-cols-3  text-white gap-11 py-24 ">
+                <a id="Global Temperature Anomalies"></a>
                 <div className="col-start-2">
                     <div className="w-1/2 -mr-96 border-t-2"></div>
                     <h1 className="text-5xl font-bold titulo1 uppercase pt-5">Global Temperature Anomalies</h1>
@@ -59,6 +61,7 @@ const C3 = () => {
 
             <div className="grid grid-cols-2  text-white gap-11 pt-48 pb-11 ">
                 <div className="pl-40">
+                    <a id="Methane"></a>
                     <div className="w-1/2 -mr-96 border-t-2"></div>
                     <h1 className="text-5xl text-left font-bold titulo1 uppercase pt-5">Methane</h1>
                     <p className="text-2xl titulo2 font-extralight text-justify pt-5 pr-24">Methane is emitted
@@ -69,6 +72,7 @@ const C3 = () => {
                     </p>
                 </div>
                 <h1 className="text-9xl pr-40 text-right font-bold titulo1 text-center big">03</h1>
+
             </div>
             <div className="about3-bg pt-2 px-40">
                 <h1 className="font-medium text-white tracking-tight text-3xl py-11">Methane</h1>
@@ -87,6 +91,7 @@ const C3 = () => {
             </div>
             <div className="grid grid-cols-2 text-white gap-11 pt-48 pb-11 ">
                 <div className="pl-20">
+                    <a id="Carbon Dioxide"></a>
                     <div className="w-1/2 -mr-96 border-t-2"></div>
                     <h1 className="text-5xl text-letf font-bold titulo1 uppercase pt-5">Carbon Dioxide</h1>
                     <p className="text-2xl titulo2 font-extralight text-justify pt-5 pr-24"> Carbon dioxide emissions
@@ -124,6 +129,7 @@ const C3 = () => {
             </div>
 
             <div className="about6-bg">
+                <a id="Nitrous Oxide"></a>
                 <div className="grid grid-cols-3  text-white gap-11 py-24 ">
                     <h1 className="text-9xl font-bold titulo1 text-center big">05</h1>
                     <div className="col-start-2">

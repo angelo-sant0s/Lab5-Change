@@ -14,19 +14,19 @@ const C2 = () => {
             </div>
             <div className="grid grid-cols-5 mb-32 mx-5  text-center">
                 <section className="text-white titulo2 ">
-                    <p className="font-medium  text-xl">Melted Ice Caps</p>
+                    <a className="font-medium  text-xl" href="#Melted Ice Caps">Melted Ice Caps</a>
                 </section>
                 <section className="text-white titulo2">
-                    <p className="font-medium  text-xl">Global Temperature Anomalies</p>
+                    <a className="font-medium  text-xl" href="#Global Temperature Anomalies">Global Temperature Anomalies</a>
                 </section>
                 <section className="text-white titulo2">
-                    <p className="font-medium  text-xl">Methane</p>
+                    <a className="font-medium  text-xl" href="#Methane">Methane</a>
                 </section>
                 <section className="text-white titulo2">
-                    <p className="font-medium text-xl">Carbon Dioxide</p>
+                    <a className="font-medium text-xl" href="#Carbon Dioxide">Carbon Dioxide</a>
                 </section>
                 <section className="text-white titulo2">
-                    <p className="font-medium text-xl">Nitrous Oxide</p>
+                    <a className="font-medium text-xl" href="#Nitrous Oxide">Nitrous Oxide</a>
                 </section>
             </div>
 
