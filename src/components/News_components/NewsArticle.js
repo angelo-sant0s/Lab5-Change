@@ -2,13 +2,12 @@ import React from 'react';
 
 const NewsArticle = (props) => {
     
-      
-    console.log(props.article);
     const {
         abstract, headline:{main}, byline:{original}, 
         lead_paragraph, news_desk, section_name,
         web_url, word_count
       } = props.article;
+
   return (
     <article className="text-white py-10 px-5">
            <h2 className='titulo text-2xl mb-2 lg:text-4xl'>{main}</h2>
