@@ -117,7 +117,7 @@ const C3 = () => {
                         Emissions have continued to grow rapidly; we now emit over 34 billion tonnes each year
                     </p>
                     <div className="flex  pt-5">
-                        <p className="text-lg pt-1 pr-4 opacity-20 hover:opacity-100 "><FaChartBar/ ></p>
+                        <a className="text-xl pt-1 pr-4 opacity-20 hover:opacity-100" href="#Data"><FaChartBar/ ></a>
                         <p className="text-xl font-extralight text-justify">See data down below.</p>
                     </div>
                 </div>

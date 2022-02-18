@@ -5,6 +5,7 @@ import C2 from "../components/About_components/C2";
 import C3 from "../components/About_components/C3";
 import C4 from "../components/About_components/C4";
 
+
 const About = () => {
     return (
         <>
