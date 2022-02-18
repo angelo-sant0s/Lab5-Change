@@ -9,6 +9,7 @@ import Navbar from './components/Navbar_components/Navbar';
 import Login from './pages/Login';
 import {signup} from './firebase-config';
 import Profile from './pages/Profile';
+import News from './pages/News';
 
 
 function App() {
@@ -45,6 +46,7 @@ function App() {
           <Route path="/Login" element={<Login signup={signup} />}/>
           <Route path="*" element={<Error />}/>
           <Route path="/Profile/:userid" element={<Profile />} />
+          <Route path="/News" element={<News />} />
         </Routes>
       </Router> 
   );
