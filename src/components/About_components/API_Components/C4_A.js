@@ -5,7 +5,7 @@ export default class C4_A extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            value_year: 2022,
+            value_year: "2022",
 
             value_month: "1",
 
@@ -43,100 +43,105 @@ export default class C4_A extends React.Component {
 
     /* Quarto Fetch|API */
     handleChangeYear(event){
-        if(this.verifyDate(event.target.value,this.state.value_month,this.state.value_days)){    
-            this.setState({value_year: event.target.value});
-            let index = this.searchArrayIndex(event.target.value,this.state.value_month,this.state.value_days);
-            this.setState({content: (<>
-                <div className="text-white pt-4 titulo2 text-md">
-                    <p>Trend: {this.state.info4[index].trend}</p>
-                </div>
-                <div className="text-white titulo2 text-md pb-24">
-                    <p>Cycle: {this.state.info4[index].cycle}</p>
-                </div>
-            </>) })
-        }else{
-            this.setState({content:(<>
-                <div className="text-white pt-4 titulo2 text-md">
-                    <p>INVALID DATE</p>
-                </div>
-            </>
-            )})
-            this.setState({value_year: event.target.value})
-        }
-    }
-    handleChangeMonth(event){
-        if(this.verifyDate(this.state.value_year,event.target.value,this.state.value_days)){
-            this.setState({value_month: event.target.value});
-            let index = this.searchArrayIndex(this.state.value_year,event.target.value,this.state.value_days);
-            this.setState({content: (<>
-                <div className="text-white pt-4 titulo2 text-md">
-                    <p>Trend: {this.state.info4[index].trend}</p>
-                </div>
-                <div className="text-white titulo2 text-md pb-24">
-                    <p>Cycle: {this.state.info4[index].cycle}</p>
-                </div>
-            </>) })
-        }else{
-            this.setState({content:(<>
-                <div className="text-white pt-4 titulo2 text-md">
-                    <p>INVALID DATE</p>
-                </div>
-            </>
-            )})
-            this.setState({value_month: event.target.value})
-        }
-    }
-    handleChangeDay(event){
-        if(this.verifyDate(this.state.value_year,this.state.value_month,event.target.value)){
-            this.setState({value_days: event.target.value});
-            let index = this.searchArrayIndex(this.state.value_year,this.state.value_month,event.target.value);
-            this.setState({content: (<>
-                <div className="text-white pt-4 titulo2 text-md">
-                    <p>Trend: {this.state.info4[index].trend}</p>
-                </div>
-                <div className="text-white titulo2 text-md pb-24">
-                    <p>Cycle: {this.state.info4[index].cycle}</p>
-                </div>
-            </>) })
-        }else{
-            this.setState({content:(<>
-                <div className="text-white pt-4 titulo2 text-md">
-                    <p>INVALID DATE</p>
-                </div>
-            </>
-            )})
-            this.setState({value_days: event.target.value})
-        }
-    }
-    searchArrayIndex(year,month,day){
-        for(let i = 0; i < this.state.info4.length; i++){
-            if(this.state.info4[i].year === year){
-                if(this.state.info4[i].month === month){
-                    if(this.state.info4[i].day === day){
-                        return i;
-                    }
-                }
+        this.setState({value_year: event.target.value});
+        let year = event.target.value;
+        let month = this.state.value_month;
+        let day = this.state.value_days;
+        let found = false;
+        console.log(year,month,day)
+        for(let i=0; i < this.state.info4.length; i++){
+            console.log(this.state.info4[i].year)
+            if(year === this.state.info4[i].year
+                && month === this.state.info4[i].month
+                 && day === this.state.info4[i].day){
+                    this.setState({content: (<>
+                        <div className="text-white pt-4 titulo2 text-md">
+                            <p>Trend: {this.state.info4[i].trend}</p>
+                        </div>
+                        <div className="text-white titulo2 text-md pb-24">
+                            <p>Cycle: {this.state.info4[i].cycle}</p>
+                        </div>
+                    </>) })
+                    found = true;
+                    break;
             }
         }
-    }
-    verifyDate(year,month,day){
-        if(year < this.state.info4[this.state.info4.length - 1].year){
-            return true;
-        }else{
-            if(month < this.state.info4[this.state.info4.length - 1].month){
-                return true;
-            }else if( month === this.state.info4[this.state.info4.length - 1].month){
-                if(day < this.state.info4[this.state.info4.length - 1].day){
-                    return true;
-                }else{
-                    return false;
-                }
-            }else{
-                return false;
-            }
+        if(!found){
+            this.setState({content:(<>
+                <div className="text-white pt-4 titulo2 text-md">
+                    <p>INVALID DATE</p>
+                </div>
+            </>
+            )})
         }
     }
 
+    handleChangeMonth(event){
+        this.setState({value_month: event.target.value});
+        let year = this.state.value_year;
+        let month = event.target.value;
+        let day = this.state.value_days;
+        let found = false;
+        for(let i=0; i < this.state.info4.length; i++){
+            console.log(this.state.info4[i].year)
+            if(year === this.state.info4[i].year
+                && month === this.state.info4[i].month
+                 && day === this.state.info4[i].day){
+                    this.setState({content: (<>
+                        <div className="text-white pt-4 titulo2 text-md">
+                            <p>Trend: {this.state.info4[i].trend}</p>
+                        </div>
+                        <div className="text-white titulo2 text-md pb-24">
+                            <p>Cycle: {this.state.info4[i].cycle}</p>
+                        </div>
+                    </>) })
+                    found = true;
+                    break;
+            }
+        }
+        if(!found){
+            this.setState({content:(<>
+                <div className="text-white pt-4 titulo2 text-md">
+                    <p>INVALID DATE</p>
+                </div>
+            </>
+            )})
+        }
+    }
+
+    handleChangeDay(event){
+        this.setState({value_days: event.target.value});
+        let year = this.state.value_year;
+        let month = this.state.value_month;
+        let day =  event.target.value;
+        let found = false;
+        for(let i=0; i < this.state.info4.length; i++){
+            console.log(this.state.info4[i].year)
+            if(year === this.state.info4[i].year
+                && month === this.state.info4[i].month
+                 && day === this.state.info4[i].day){
+                    this.setState({content: (<>
+                        <div className="text-white pt-4 titulo2 text-md">
+                            <p>Trend: {this.state.info4[i].trend}</p>
+                        </div>
+                        <div className="text-white titulo2 text-md pb-24">
+                            <p>Cycle: {this.state.info4[i].cycle}</p>
+                        </div>
+                    </>) })
+                    found = true;
+                    break;
+            }
+        }
+        if(!found){
+            this.setState({content:(<>
+                <div className="text-white pt-4 titulo2 text-md">
+                    <p>INVALID DATE</p>
+                </div>
+            </>
+            )})
+        }
+    }
+    
     async componentDidMount() {
 
 
