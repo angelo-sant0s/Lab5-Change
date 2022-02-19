@@ -50,7 +50,6 @@ export default class C4_A extends React.Component {
         let found = false;
         console.log(year,month,day)
         for(let i=0; i < this.state.info4.length; i++){
-            console.log(this.state.info4[i].year)
             if(year === this.state.info4[i].year
                 && month === this.state.info4[i].month
                  && day === this.state.info4[i].day){
@@ -83,7 +82,6 @@ export default class C4_A extends React.Component {
         let day = this.state.value_days;
         let found = false;
         for(let i=0; i < this.state.info4.length; i++){
-            console.log(this.state.info4[i].year)
             if(year === this.state.info4[i].year
                 && month === this.state.info4[i].month
                  && day === this.state.info4[i].day){
@@ -116,7 +114,6 @@ export default class C4_A extends React.Component {
         let day =  event.target.value;
         let found = false;
         for(let i=0; i < this.state.info4.length; i++){
-            console.log(this.state.info4[i].year)
             if(year === this.state.info4[i].year
                 && month === this.state.info4[i].month
                  && day === this.state.info4[i].day){
