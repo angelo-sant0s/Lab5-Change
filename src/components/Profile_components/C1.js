@@ -1,4 +1,3 @@
-
 import React, {useEffect, useState} from "react";
 import {BiBarChart, BiLocationPlus, BiMailSend, BiCurrentLocation} from "react-icons/bi";
 import db from "../../firebase-config";
@@ -7,14 +6,55 @@ import { collection, onSnapshot } from "firebase/firestore";
 
 
 const C1 = (props) => {
-    const [countries, setCountries] = useState([]);
+
+    const [cities, setCities] = useState([]);
+    const gases = ["Carbon Monoxide","Methane","Ozone","Nitrogen Dioxide"];
+    const metodos = props.methods;
+    const metodos_gas = props.methods2;
 
     useEffect(() => {
-        onSnapshot(collection(db,"Countries"),(snapshot) => {
-            setCountries(snapshot.docs.map((doc) => doc.data()));
+        onSnapshot(collection(db,"Cities"),(snapshot) => {
+            setCities(snapshot.docs.map((doc) => doc.data()));
         });
     }, []);
+
     
+    const currentUser = useAuth();
+
+    const changeCity = (event) => {
+        switch(event.target.value){
+            case "Beijing":
+                metodos[0][1](event.target.checked);
+            break;
+            case "Berlin":
+                metodos[1][1](event.target.checked);
+            break; 
+            case "New York":
+                metodos[2][1](event.target.checked);
+            break; 
+            case "Tokyo":
+                metodos[3][1](event.target.checked);
+            break;     
+        }
+    };
+
+    const changeGas = (event) => {
+        switch(event.target.value){
+            case "Carbon Monoxide":
+                metodos_gas[0][1](event.target.checked);
+            break;
+            case "Methane":
+                metodos_gas[1][1](event.target.checked);
+            break; 
+            case "Ozone":
+                metodos_gas[2][1](event.target.checked);
+            break; 
+            case "Nitrogen Dioxide":
+                metodos_gas[3][1](event.target.checked);
+            break;
+        }
+    }
+   
     return (
         <>
             <div className="bg-neutral-900 pb-10">
@@ -22,17 +62,15 @@ const C1 = (props) => {
                 </div>
                 <div className="grid grid-cols-3 gap-11">
                     <div className=" container px-6 mx-auto">
-                        <div
-                            className=" rounded shadow relative bg-white z-10 -mt-16 mb-8 h-96">
-                            <div className="flex-col flex pt-5 ">
+                        <div className=" rounded shadow relative bg-white z-10 -mt-16 mb-8 h-96">
+                            {currentUser ? (<div className="flex-col flex pt-5 ">
                                 <div className="text-center items-center">
                                     <div className="w-36 h-36 mx-auto">
                                         <img className=" border-2 shadow w-36 h-36 border-black rounded-full"
-                                             src=" https://cdn.tuk.dev/assets/webapp/master_layouts/boxed_layout/boxed_layout2.jpg"
+                                             src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
                                              alt="logo"/>
                                     </div>
-                                    <h5 className="font-medium tracking-tight titulo2 text-xl pt-5 mb-1">Andres
-                                        Berlin
+                                    <h5 className="font-medium tracking-tight titulo2 text-xl pt-5 mb-1">{currentUser.email}
                                     </h5>
                                     <p className="font-extralight text-md"></p>
                                 </div>
@@ -64,7 +102,7 @@ const C1 = (props) => {
                                         </li>
                                     </ul>
                                 </div>
-                            </div>
+                            </div>) : (<><h1 className='text-white text-center mt-20 titulo3 text-6xl'>Loading...</h1></>)}
                         </div>
                     </div>
                     <div className='col-span-2 text-center text-white mt-16'>
@@ -81,18 +119,18 @@ const C1 = (props) => {
                                     <div className="flex items-center border-b border-gray-200 pb-6">
                                         <div className="flex items-start justify-between w-full">
                                             <div className="pl-3 text-left ">
-                                                <p className="font-medium tracking-tight titulo2 text-xl leading-5 text-gray-800">Escolhe o
-                                                    país
+                                                <p className="font-medium tracking-tight titulo2 text-xl leading-5 text-gray-800">Choose the city
                                                 </p>
-                                                <p className="font-extralight text-md pt-2 text-gray-500">4 opções</p>
+                                                <p className="font-extralight text-md pt-2 text-gray-500">{cities.length} options</p>
                                                         <div className="text-left pt-5 pl-3">    
-                                                            {countries.map((pais) => (
-                                                                <div className="text-left pt-5 pl-3" key={pais.name}>
+                                                            {cities.map((city) => (
+                                                                <div className="text-left pt-5 pl-3" key={city.name}>
                                                                 <div className="relative inline-block w-10 mr-2 align-middle select-none transition duration-200 ease-in">
-                                                                    <input type="checkbox" name="toggle" className="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer" value={pais.name} checked ={props.CountryCheck} onChange={props.handlecheck}/>
+                                                                    <input type="checkbox" name="toggle" className="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer"
+                                                                     value={city.name} onChange={changeCity}/>
                                                                     <label className="toggle-label block overflow-hidden h-6 rounded-full bg-gray-300 cursor-pointer"></label>
                                                                 </div>
-                                                                <label className="font-extralight text-md pt-2 tracking-tight text-gray-500">{pais.name}</label>
+                                                                <label className="font-extralight text-md pt-2 tracking-tight text-gray-500">{city.name}</label>
                                                                 </div>))}
                                                     </div>
                                             </div>
@@ -103,19 +141,22 @@ const C1 = (props) => {
                                     <div className="flex items-center border-b border-gray-200 pb-6">
                                         <div className="flex items-start justify-between w-full">
                                             <div className="pl-3 text-left ">
-                                                <p className="font-medium tracking-tight titulo2 text-xl leading-5 text-gray-800">Escolhe os
-                                                    gases
+                                                <p className="font-medium tracking-tight titulo2 text-xl leading-5 text-gray-800">Choose the Gases
                                                 </p>
-                                                <p className="font-extralight text-md pt-2 text-gray-500">36 members</p>
+                                                <p className="font-extralight text-md pt-2 text-gray-500">4 Options</p>
                                                 <div className="text-left pt-5 pl-3">
                                                                 <div className="text-left pt-5 pl-3">
-                                                                <div className="relative inline-block w-10 mr-2 align-middle select-none transition duration-200 ease-in">
-                                                                    <input type="checkbox" name="toggle" className="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer"/>
-                                                                    <label className="toggle-label block overflow-hidden h-6 rounded-full bg-gray-300 cursor-pointer"></label>
-                                                                </div>
-                                                                <label className="font-extralight text-md pt-2 tracking-tight text-gray-500">Carbon Monoxide</label>
-                                                                </div>
+                                                                    {gases.map((gas) => (
+                                                                        <div className="text-left pt-5 pl-3" key={gas}>
+                                                                            <div className="relative inline-block w-10 mr-2 align-middle select-none transition duration-200 ease-in">
+                                                                                <input type="checkbox" name="toggle" className="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer"
+                                                                                value={gas} onChange={changeGas}/>
+                                                                                <label className="toggle-label block overflow-hidden h-6 rounded-full bg-gray-300 cursor-pointer"></label>
+                                                                            </div>
+                                                                            <label className="font-extralight text-md pt-2 tracking-tight text-gray-500">{gas}</label>
+                                                                    </div>))}                                                         
                                                     </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
