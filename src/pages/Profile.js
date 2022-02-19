@@ -6,6 +6,7 @@ import Footer from '../components/Footer_components/Footer';
 
 const Profile = () => {
 
+
     const[Beijing, setBeijing] = useState(false);
     const[Berlin, setBerlin] = useState(false);
     const[NewYork, setNewYork] = useState(false);
@@ -14,6 +15,7 @@ const Profile = () => {
     [Berlin, setBerlin],
     [NewYork, setNewYork],
     [Tokyo, setTokyo]];
+
     const[Carbon, setCarbon] = useState(false);
     const[Methane,setMethane] = useState(false);
     const[Ozone, setOzone] = useState(false);
@@ -26,7 +28,6 @@ const Profile = () => {
     const handlecheck = (array) => {
         array[1](!array[0]);
     }
-    console.log(Beijing);
 
     return (
         <>
