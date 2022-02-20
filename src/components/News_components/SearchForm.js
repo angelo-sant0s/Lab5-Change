@@ -10,8 +10,8 @@ const SearchForm = ({searchText}) => {
     <div>
         <form onSubmit={handleSubmit}>
             <input type="text"
-            className='py-3 px-5 rounded-l text-black' 
-            placeholder='What are you looking for?'
+            className='py-3 px-5 rounded-l text-black'
+            placeholder='ex. Oil'
             onChange={(e) => setProcura(e.target.value)}
             />
             <button type='submit' 
