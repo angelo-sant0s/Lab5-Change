@@ -34,7 +34,7 @@ const Profile = () => {
             <C1 handlecheck={handlecheck} methods={setarrays} methods2={setarrays2}/>
             {Beijing && Carbon ? (<><h1 className='text-white'>working</h1></>): (<><h1 className='text-white'>Not working</h1></>)}
             <C2 />
-            <C3 />
+            <C3 cities={setarrays} gas={Carbon}/>
             <Footer />
         </>
     )
