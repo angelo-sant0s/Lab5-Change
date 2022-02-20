@@ -26,7 +26,7 @@ const News = () => {
 
     return (
         <>
-            <div className='showcase text-white'>
+            <div className='showcase '>
                 <div className='overlay px-5'>
                     <h1 className='text-4xl font-bold text-white text-center titulo2 mb-4 uppercase'>Viewing articles
                         about
