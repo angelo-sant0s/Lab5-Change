@@ -4,7 +4,7 @@ import Earth  from "../assets/imgs/earth.png";
 
 const Error = () => {
     return (
-        <div className="grid grid-cols-2  text-center pt-64">
+        <div className="grid grid-cols-2 text-center pt-64">
             <div className="">
                 <h1 className="text-9xl font-black titulo4 text-white ">404</h1>
                 <h1 className="text-4xl text-white pt-5">PAGE NOT FOUND!</h1>
