@@ -2,6 +2,7 @@ import { initializeApp } from "firebase/app";
 import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signOut } from 'firebase/auth'; 
 import { useState, useEffect } from "react";
 import {getFirestore} from "firebase/firestore";
+import { getStorage } from "firebase/storage";
 
 const config = {
   apiKey: "AIzaSyA9Ilb40O2dlZQR8xyzXVOYb3fsaRsXnNo",
@@ -15,6 +16,7 @@ const config = {
 
 const app = initializeApp(config);
 const auth = getAuth(app);
+
 
 export const signup = (email, password) => {
   return createUserWithEmailAndPassword(auth, email, password);
@@ -41,3 +43,4 @@ export const useAuth = () => {
 }
 
 export default getFirestore();
+export const storage = getStorage(app)

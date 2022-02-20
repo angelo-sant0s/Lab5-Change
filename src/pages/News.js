@@ -39,13 +39,13 @@ const News = () => {
             {isLoading ? (<h1 className='text-white text-center mt-20 titulo3 text-6xl'>Loading...</h1>) : (
                 <div className='text-white px-5 pb-20 grid grid-cols-3 gap-10'>
 
-                {news.map((article) => {
-                    return (
-                        <NewsArticle key={article._id} article={article}/>
-                    )
-                })}
+                    {news.map((article) => {
+                        return (
+                            <NewsArticle key={article._id} article={article}/>
+                        )
+                    })}
                 </div>
-                )}
+            )}
         </>
     )
 }

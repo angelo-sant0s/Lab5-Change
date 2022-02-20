@@ -1,60 +1,60 @@
 import React, {useEffect, useState} from "react";
 import {BiBarChart, BiLocationPlus, BiMailSend, BiCurrentLocation} from "react-icons/bi";
-import db from "../../firebase-config";
-import { useAuth } from '../../firebase-config';
-import { collection, onSnapshot } from "firebase/firestore";
+import C1_A from "../Profile_components/Img/C1_A"
+import db, {useAuth} from "../../firebase-config";
+import {collection, onSnapshot} from "firebase/firestore";
 
 
 const C1 = (props) => {
 
     const [cities, setCities] = useState([]);
-    const gases = ["Carbon Monoxide","Methane","Ozone","Nitrogen Dioxide"];
+    const gases = ["Carbon Monoxide", "Methane", "Ozone", "Nitrogen Dioxide"];
     const metodos = props.methods;
     const metodos_gas = props.methods2;
 
     useEffect(() => {
-        onSnapshot(collection(db,"Cities"),(snapshot) => {
+        onSnapshot(collection(db, "Cities"), (snapshot) => {
             setCities(snapshot.docs.map((doc) => doc.data()));
         });
     }, []);
 
-    
     const currentUser = useAuth();
 
+
     const changeCity = (event) => {
-        switch(event.target.value){
+        switch (event.target.value) {
             case "Beijing":
                 metodos[0][1](event.target.checked);
-            break;
+                break;
             case "Berlin":
                 metodos[1][1](event.target.checked);
-            break; 
+                break;
             case "New York":
                 metodos[2][1](event.target.checked);
-            break; 
+                break;
             case "Tokyo":
                 metodos[3][1](event.target.checked);
-            break;     
+                break;
         }
     };
 
     const changeGas = (event) => {
-        switch(event.target.value){
+        switch (event.target.value) {
             case "Carbon Monoxide":
                 metodos_gas[0][1](event.target.checked);
-            break;
+                break;
             case "Methane":
                 metodos_gas[1][1](event.target.checked);
-            break; 
+                break;
             case "Ozone":
                 metodos_gas[2][1](event.target.checked);
-            break; 
+                break;
             case "Nitrogen Dioxide":
                 metodos_gas[3][1](event.target.checked);
-            break;
+                break;
         }
     }
-   
+
     return (
         <>
             <div className="bg-neutral-900 pb-10">
@@ -66,41 +66,8 @@ const C1 = (props) => {
                             {currentUser ? (<div className="flex-col flex pt-5 ">
                                 <div className="text-center items-center">
                                     <div className="w-36 h-36 mx-auto">
-                                        <img className=" border-2 shadow w-36 h-36 border-black rounded-full"
-                                             src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
-                                             alt="logo"/>
+                                       <C1_A />
                                     </div>
-                                    <h5 className="font-medium tracking-tight titulo2 text-xl pt-5 mb-1">{currentUser.email}
-                                    </h5>
-                                    <p className="font-extralight text-md"></p>
-                                </div>
-                                <div className=" bg-white pl-5 pt-5 rounded-lg shadow">
-                                    <ul className="divide-y-2 divide-gray-100">
-                                        <li className="flex p-3 font-light text-md">
-                                            <h1 className="pr-2 text-2xl">
-                                                <BiCurrentLocation/>
-                                            </h1>
-                                            Cidade
-                                        </li>
-                                        <li className="flex p-3 font-light text-md">
-                                            <h1 className="pr-2 text-2xl">
-                                                <BiMailSend/>
-                                            </h1>
-                                            Email: 
-                                        </li>
-                                        <li className="flex p-3 font-light text-md">
-                                            <h1 className="pr-2 text-2xl">
-                                                <BiBarChart/>
-                                            </h1>
-                                            Opções Associadas
-                                        </li>
-                                        <li className="flex p-3 mb-36 font-light text-md">
-                                            <h1 className="pr-2 text-2xl">
-                                                <BiLocationPlus/>
-                                            </h1>
-                                            Países Associados
-                                        </li>
-                                    </ul>
                                 </div>
                             </div>) : (<><h1 className='text-white text-center mt-20 titulo3 text-6xl'>Loading...</h1></>)}
                         </div>
@@ -122,17 +89,17 @@ const C1 = (props) => {
                                                 <p className="font-medium tracking-tight titulo2 text-xl leading-5 text-gray-800">Choose the city
                                                 </p>
                                                 <p className="font-extralight text-md pt-2 text-gray-500">{cities.length} options</p>
-                                                        <div className="text-left pt-5 pl-3">    
-                                                            {cities.map((city) => (
-                                                                <div className="text-left pt-5 pl-3" key={city.name}>
-                                                                <div className="relative inline-block w-10 mr-2 align-middle select-none transition duration-200 ease-in">
-                                                                    <input type="checkbox" name="toggle" className="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer"
-                                                                     value={city.name} onChange={changeCity}/>
-                                                                    <label className="toggle-label block overflow-hidden h-6 rounded-full bg-gray-300 cursor-pointer"></label>
-                                                                </div>
-                                                                <label className="font-extralight text-md pt-2 tracking-tight text-gray-500">{city.name}</label>
-                                                                </div>))}
-                                                    </div>
+                                                <div className="text-left pt-5 pl-3">
+                                                    {cities.map((city) => (
+                                                        <div className="text-left pt-5 pl-3" key={city.name}>
+                                                            <div className="relative inline-block w-10 mr-2 align-middle select-none transition duration-200 ease-in">
+                                                                <input type="checkbox" name="toggle" className="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer"
+                                                                       value={city.name} onChange={changeCity}/>
+                                                                <label className="toggle-label block overflow-hidden h-6 rounded-full bg-gray-300 cursor-pointer"></label>
+                                                            </div>
+                                                            <label className="font-extralight text-md pt-2 tracking-tight text-gray-500">{city.name}</label>
+                                                        </div>))}
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -145,27 +112,28 @@ const C1 = (props) => {
                                                 </p>
                                                 <p className="font-extralight text-md pt-2 text-gray-500">4 Options</p>
                                                 <div className="text-left pt-5 pl-3">
-                                                                <div className="text-left pt-5 pl-3">
-                                                                    {gases.map((gas) => (
-                                                                        <div className="text-left pt-5 pl-3" key={gas}>
-                                                                            <div className="relative inline-block w-10 mr-2 align-middle select-none transition duration-200 ease-in">
-                                                                                <input type="checkbox" name="toggle" className="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer"
-                                                                                value={gas} onChange={changeGas}/>
-                                                                                <label className="toggle-label block overflow-hidden h-6 rounded-full bg-gray-300 cursor-pointer"></label>
-                                                                            </div>
-                                                                            <label className="font-extralight text-md pt-2 tracking-tight text-gray-500">{gas}</label>
-                                                                    </div>))}                                                         
+                                                    <div className="text-left pt-5 pl-3">
+                                                        {gases.map((gas) => (
+                                                            <div className="text-left pt-5 pl-3" key={gas}>
+                                                                <div className="relative inline-block w-10 mr-2 align-middle select-none transition duration-200 ease-in">
+                                                                    <input type="checkbox" name="toggle" className="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer"
+                                                                           value={gas} onChange={changeGas}/>
+                                                                    <label className="toggle-label block overflow-hidden h-6 rounded-full bg-gray-300 cursor-pointer"></label>
+                                                                </div>
+                                                                <label className="font-extralight text-md pt-2 tracking-tight text-gray-500">{gas}</label>
+                                                            </div>))}
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
+
         </>
     )
 

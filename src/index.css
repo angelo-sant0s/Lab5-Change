@@ -181,9 +181,6 @@ body {
     @apply rounded-full py-3 px-11 cursor-pointer bg-black text-white opacity-95 hover:opacity-100 hover:drop-shadow-xl
 }
 
-.btn3{
-    @apply rounded-full py-3 px-11 cursor-pointer bg-white text-black opacity-95 hover:opacity-100
-}
 
 .toggle-checkbox:checked {
     @apply: right-0 border-green-400;
@@ -250,4 +247,6 @@ body {
         text-shadow: -0.05em 0 0 #00fffc, -0.025em -0.04em 0 #fc00ff;
     }
 }
-
+input[type="file"] {
+    display: none;
+}
