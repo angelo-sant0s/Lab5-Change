@@ -26,9 +26,9 @@ const News = () => {
 
     return (
         <>
-            <div className='showcase '>
+            <div className='showcase text-white '>
                 <div className='overlay px-5'>
-                    <h1 className='text-4xl font-bold text-white text-center titulo2 mb-4 uppercase'>Viewing articles
+                    <h1 className='text-4xl font-bold text-center titulo2 mb-4 uppercase'>Viewing articles
                         about
                         <span className='pl-5 titulo3'>{search}</span>
                     </h1>
