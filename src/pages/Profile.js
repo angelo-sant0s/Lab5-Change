@@ -3,6 +3,8 @@ import C1 from '../components/Profile_components/C1';
 import C2 from '../components/Profile_components/C2';
 import C3 from '../components/Profile_components/C3';
 import Footer from '../components/Footer_components/Footer';
+import C4 from '../components/Profile_components/C4';
+import C5 from '../components/Profile_components/C5';
 
 const Profile = () => {
 
@@ -32,9 +34,10 @@ const Profile = () => {
     return (
         <>
             <C1 handlecheck={handlecheck} methods={setarrays} methods2={setarrays2}/>
-            {Beijing && Carbon ? (<><h1 className='text-white'>working</h1></>): (<><h1 className='text-white'>Not working</h1></>)}
-            <C2 />
+            <C2 cities={setarrays} gas={Methane}/>
             <C3 cities={setarrays} gas={Carbon}/>
+            <C4 cities={setarrays} gas={Ozone}/>
+            <C5 cities={setarrays} gas={Nitrogen}/>
             <Footer />
         </>
     )

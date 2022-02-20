@@ -12,14 +12,14 @@ ChartJS.register(
 );
 
 
-const C0Graph = () => {
+const NitrogenGraph = () => {
   const [chart, setChart] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
         try{
            const resp = await fetch(
-                `https://api.v2.emissions-api.org/api/v2/carbonmonoxide/average.json?country=CH&begin=2021-12-01&end=2021-12-31`
+                `https://api.v2.emissions-api.org/api/v2/nitrogendioxide/average.json?country=CH&begin=2020-12-01&end=2020-12-31`
                   )
               const chart = await resp.json();
               setChart(chart);
@@ -33,13 +33,13 @@ const C0Graph = () => {
   let data = {
     labels: chart?.map(x => x.start.substring(8,10)),
     datasets: [{
-      label: `C0 Average Beijing [mol/m²] per day`,
+      label: `Nitrogen Average Beijing [mol/m²] per day`,
       data: chart?.map(x => x.average),
       backgroundColor: [
-        'rgba(255, 99, 132, 0.2)',
+        'rgba(194, 112, 64, 0.2)',
       ],
       borderColor: [
-        'rgba(255, 99, 132, 1)',
+        'rgba(194, 112, 64, 1)',
       ],
       borderWidth: 1
     }]
@@ -50,7 +50,7 @@ const C0Graph = () => {
         yAxes: [{
             scaleLabel: {
                 display: true,
-                labelString: 'carbon monoxide [mol/m²]'
+                labelString: 'Nitrogen [mol/m²]'
             },
             ticks: {
                 beginAtZero: true
@@ -73,4 +73,4 @@ const C0Graph = () => {
   )
 }
 
-export default C0Graph;
+export default NitrogenGraph;
