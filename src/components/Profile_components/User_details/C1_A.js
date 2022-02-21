@@ -14,9 +14,9 @@ const C1_A = (props) => {
 
     const handleImageChange = (e) => {
         if (e.target.files[0]) {
-            setImage(e.target.files[0]);
-        }
-    };
+            setImage(e.target.files[0
+    ]);
+        }};
 
     const handleSubmit = () => {
         upload(image, currentUser,setLoading);
@@ -24,8 +24,8 @@ const C1_A = (props) => {
 
     useEffect(() => {
         if(currentUser){
-            if(currentUser?.photoURL){       
-                setPhotoUrl(currentUser.photoURL); 
+            if(currentUser?.photoURL){
+                setPhotoUrl(currentUser.photoURL);
             }
             const docRef = doc(db, "users" , currentUser.uid)
             getDoc(docRef)
@@ -34,12 +34,15 @@ const C1_A = (props) => {
             })
         }
     }, [currentUser])
-    
+
     return (
         <>
             <div> {currentUser ? (
-                <div className="rounded shadow relative bg-white -mt-16 mb-8 h-96 pt-11">
-                    <div className=" text-center items-center w-36 h-36 mx-auto">
+                <div className="rounded shadow relative bg-white -mt-16 pt-11">
+                    <div className=" text-center items-center w-36 h-42 mx-auto">
+                        <div className="font-medium pb-3">
+                            {userinfo.username}
+                        </div>
                         <img src={photoURL} className="border-2 shadow w-36 h-36 border-black rounded-full" draggable={false} alt={photoURL}/>
                         <div className="grid grid-cols-2 gap-1 pt-5">
                             <label className="rounded-full bg-black text-white text-center hover:shadow-lg p-2">
@@ -50,11 +53,9 @@ const C1_A = (props) => {
                                     onClick={handleSubmit}
                                     disabled={loading || !image}>Submit
                             </button>
-                            {userinfo.username}
                         </div>
                     </div>
-
-                    <div className=" bg-white pl-5 pt-24 pb-28 rounded-lg shadow">
+                    <div className=" bg-white pl-5 pt-8 pb-20 rounded-lg shadow">
                         <ul className="divide-y-2 divide-gray-100">
                             <li className="flex p-3 font-light text-md">
                                 <h1 className="pr-2 text-2xl">
