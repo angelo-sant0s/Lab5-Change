@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import C1 from '../components/Profile_components/C1';
 import C2 from '../components/Profile_components/C2';
 import C3 from '../components/Profile_components/C3';
-import Footer from '../components/Footer_components/Footer';
 import C4 from '../components/Profile_components/C4';
 import C5 from '../components/Profile_components/C5';
 
@@ -38,7 +37,6 @@ const Profile = () => {
             <C3 cities={setarrays} gas={Carbon}/>
             <C4 cities={setarrays} gas={Ozone}/>
             <C5 cities={setarrays} gas={Nitrogen}/>
-            <Footer />
         </>
     )
 }

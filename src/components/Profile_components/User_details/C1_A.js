@@ -1,50 +1,56 @@
-import React from "react";
-import {useState} from "react";
-import {storage, useAuth} from "../../../firebase-config";
-import {ref, uploadBytes, getDownloadURL} from "firebase/storage";
+import React, { useEffect,useState } from "react";
+import db ,{upload, useAuth} from "../../../firebase-config";
 import {BiBarChart, BiCurrentLocation, BiLocationPlus, BiMailSend} from "react-icons/bi";
+import {doc, getDoc} from "firebase/firestore";
 
 
 const C1_A = (props) => {
-    const [image, setImage] = useState(null)
-    const [url, setUrl] = useState(null)
+
+    const currentUser = useAuth();
+    const[photoURL, setPhotoUrl] = useState("https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__480.png");
+    const [image, setImage] = useState(null);
+    const [loading, setLoading] = useState(false);
+    const[userinfo, setUserinfo] = useState([]);
 
     const handleImageChange = (e) => {
         if (e.target.files[0]) {
             setImage(e.target.files[0]);
         }
     };
-    const currentUser = useAuth();
+
     const handleSubmit = () => {
-        const imageRef = ref(storage, "image");
-        uploadBytes(imageRef, image).then(() => {
-            getDownloadURL(imageRef).then((url) => {
-                setUrl(url);
-            })
-                .catch((error) => {
-                    console.log(error.message, "error getting the image url");
-                });
-            setImage(null);
-        })
-            .catch((error) => {
-                console.log(error.message);
-            });
+        upload(image, currentUser,setLoading);
     };
 
+    useEffect(() => {
+        if(currentUser){
+            if(currentUser?.photoURL){       
+                setPhotoUrl(currentUser.photoURL); 
+            }
+            const docRef = doc(db, "users" , currentUser.uid)
+            getDoc(docRef)
+            .then((doc) => {
+                setUserinfo(doc.data());
+            })
+        }
+    }, [currentUser])
+    
     return (
         <>
             <div> {currentUser ? (
                 <div className="rounded shadow relative bg-white -mt-16 mb-8 h-96 pt-11">
                     <div className=" text-center items-center w-36 h-36 mx-auto">
-                        <img src={url} className="border-2 shadow w-36 h-36 border-black rounded-full"/>
+                        <img src={photoURL} className="border-2 shadow w-36 h-36 border-black rounded-full" alt={photoURL}/>
                         <div className="grid grid-cols-2 gap-1 pt-5">
                             <label className="rounded-full bg-black text-white text-center hover:shadow-lg p-2">
                                 <input
                                     type="file" onChange={handleImageChange}/>Select
                             </label>
                             <button className="rounded-full bg-black text-white text-center hover:shadow-lg p-2"
-                                    onClick={handleSubmit}>Submit
+                                    onClick={handleSubmit}
+                                    disabled={loading || !image}>Submit
                             </button>
+                            {userinfo.username}
                         </div>
                     </div>
 
@@ -54,7 +60,7 @@ const C1_A = (props) => {
                                 <h1 className="pr-2 text-2xl">
                                     <BiCurrentLocation/>
                                 </h1>
-                                <label className="pr-1" for="cidade">City:</label>
+                                <label className="pr-1">City:</label>
                                 <input className="font-medium" type="text" id="cidade" name="cidade"/>
                             </li>
                             <li className="flex p-3 font-light text-md">

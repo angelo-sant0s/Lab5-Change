@@ -1,10 +1,12 @@
-import React, {useRef, useState} from 'react';
+import React, {useRef, useState, useEffect} from 'react';
 import './Form.css';
-import { signup, useAuth } from '../../firebase-config';
+import db, { signup, useAuth } from '../../firebase-config';
+import { doc, setDoc } from 'firebase/firestore';
 
 
 const SignUpForm = () => {
     const[loading,setLoading] = useState();
+    const usernameRef = useRef();
     const emailRef = useRef();
     const PasswordRef = useRef();
     const passwordConfirmRef = useRef();
@@ -13,12 +15,21 @@ const SignUpForm = () => {
     const handleSubmit = async (event) => {
         setLoading(true);
         try{    
-            await signup(emailRef.current.value,PasswordRef.current.value);
+            await signup(emailRef.current.value,PasswordRef.current.value);           
+            
         }catch(error){
             alert(error.message);
         }
         setLoading(false);
     }
+    useEffect(() => {
+        if(currentUser?.uid){
+            const docRef = doc(db, "users",currentUser.uid);
+            const payload = {username: usernameRef.current.value}
+            setDoc(docRef, payload);
+        }
+    }, [currentUser])
+    
 
     return (
             <form className='form' noValidate>
@@ -33,6 +44,7 @@ const SignUpForm = () => {
                         type='text'
                         name='username'
                         placeholder='Enter your username'
+                        ref={usernameRef}
                     />
                 </div>
                 <div className='form-inputs'>
@@ -69,7 +81,6 @@ const SignUpForm = () => {
                 <button className='form-input-btn btn titulo2 mt-5' disabled={loading || currentUser } onClick={handleSubmit}>
                     Sign up
                 </button>
-                <div className='text-white'>{currentUser?.email}</div>
             </form>
     );
 };

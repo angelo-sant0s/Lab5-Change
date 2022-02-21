@@ -1,8 +1,8 @@
 import { initializeApp } from "firebase/app";
-import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signOut } from 'firebase/auth'; 
+import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signOut, updateProfile } from 'firebase/auth'; 
 import { useState, useEffect } from "react";
 import {getFirestore} from "firebase/firestore";
-import { getStorage } from "firebase/storage";
+import { getDownloadURL, getStorage, ref, uploadBytes } from "firebase/storage";
 
 const config = {
   apiKey: "AIzaSyA9Ilb40O2dlZQR8xyzXVOYb3fsaRsXnNo",
@@ -43,4 +43,18 @@ export const useAuth = () => {
 }
 
 export default getFirestore();
-export const storage = getStorage(app)
+export const storage = getStorage(app);
+
+// Storage functions
+export const upload = async(file,currentUser,setLoading) => {
+  const fileRef = ref(storage, currentUser.uid + '.png');
+
+  setLoading(true);
+
+  const ImgPromise = await uploadBytes(fileRef, file);
+  const photoURL = await getDownloadURL(fileRef);
+  updateProfile(currentUser,{photoURL});
+  setLoading(false);
+  alert("Uploaded file!");
+  window.location.reload(false);
+}

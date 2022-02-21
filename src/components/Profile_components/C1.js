@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from "react";
 import {BiBarChart, BiLocationPlus, BiMailSend, BiCurrentLocation} from "react-icons/bi";
-import C1_A from "../Profile_components/Img/C1_A"
+import C1_A from "./User_details/C1_A"
 import db, {useAuth} from "../../firebase-config";
 import {collection, onSnapshot} from "firebase/firestore";
 
