@@ -54,7 +54,7 @@ const C1_A = (props) => {
                                 <h1 className="pr-2 text-2xl">
                                     <BiCurrentLocation/>
                                 </h1>
-                                <label className="pr-1" for="cidade">Cidade:</label>
+                                <label className="pr-1" for="cidade">City:</label>
                                 <input className="font-medium" type="text" id="cidade" name="cidade"/>
                             </li>
                             <li className="flex p-3 font-light text-md">
@@ -68,7 +68,7 @@ const C1_A = (props) => {
                                 <h1 className="pr-2 text-2xl">
                                     <BiBarChart/>
                                 </h1>
-                                Opções Associadas:
+                                Selected Gases:
                                 <span className="font-medium pl-1">
                                 {props.gases[0][0] ? ("CO ") : ("")}
                                 {props.gases[1][0] ? (<span className="pr-1">CH<sub>4</sub></span>) : ("")}
@@ -80,7 +80,7 @@ const C1_A = (props) => {
                                 <h1 className="pr-2 text-2xl">
                                     <BiLocationPlus/>
                                 </h1>
-                                Países Associados:
+                                Selected Cities:
                                 <span className="font-medium pl-1">
                                     {props.cidade[0][0] ? ("BJ") : ("")}
                                     {props.cidade[1][0] ? (" BE") : ("")}

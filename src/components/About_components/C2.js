@@ -4,7 +4,7 @@ const C2 = () => {
     return (
         <>
             <div className="text-center text-white ml-80 mr-80 pt-32 pb-24">
-                <h1 className="text-6xl font-medium ">Climate Change</h1>
+                <h1 className="text-6xl titulo1 font-medium ">Climate Change</h1>
                 <p className="text-xl font-extralight text-justify mt-7">
                     Climate is the average weather in a place over many years. Climate change is a shift in those average conditions.
                     The rapid climate change we are now seeing is caused by humans using oil, gas and coal for their homes, factories and transport.

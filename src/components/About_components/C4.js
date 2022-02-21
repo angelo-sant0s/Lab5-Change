@@ -4,9 +4,12 @@ import C2 from "./API_Components/C2";
 import C3 from "./API_Components/C3";
 import C4_A from "./API_Components/C4_A";
 import C5 from "./API_Components/C5";
+import {useAuth} from "../../firebase-config";
 
 
 const C4 = () => {
+    const currentUser = useAuth();
+
     return (
         <a id="Data">
             <div className="container mx-auto px-20 pt-3">
@@ -100,7 +103,7 @@ const C4 = () => {
                         </div>
                     </div>
                 </div>
-                <Link className="btn px-8 pt-3 titulo2 text-2xl" to="/Profile">Find Yours</Link>
+                {currentUser ? (<Link className="btn px-8 pt-3 titulo2 text-2xl" to={`/Profile/${currentUser.uid}`}>Find Yours</Link>) : (<Link className="btn px-8 pt-3 titulo2 text-2xl" to="/Login">Find Yours</Link>) }
             </div>
         </a>
     )

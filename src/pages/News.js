@@ -35,7 +35,7 @@ const News = () => {
                     <SearchForm searchText={(procura) => setSearch(procura)}/>
                 </div>
             </div>
-            <h1 className='text-4xl text-white px-9 pt-16 pb-11 titulo2 uppercase'>Most relevant</h1>
+            <h1 className='titulo1 text-6xl text-white pl-16 pt-16 pb-11  uppercase'>Most relevant</h1>
             {isLoading ? (<h1 className='text-white text-center mt-20 titulo3 text-6xl'>Loading...</h1>) : (
                 <div className='text-white px-5 pb-20 grid grid-cols-3 gap-10'>
 
