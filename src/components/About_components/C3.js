@@ -143,7 +143,7 @@ const C3 = () => {
                 </div>
             </div>
             <div className="grid grid-cols-3 gap-5 text-center  text-white  pt-48 pb-28 px-32 ">
-                <div className="col-start-1 pr-8">
+                <div className="col-start-1 pr-2">
                     <p className="text-xl titulo2 font-extralight text-justify pt-5">The main driver of climate change is the greenhouse effect.
                         Some gases in the <b> Earth's atmosphere </b> act a bit like the glass in a greenhouse, trapping the sun's heat and stopping it
                         from leaking back into space and causing global warming.
@@ -153,7 +153,7 @@ const C3 = () => {
                         of some of them in the atmosphere. This are the percentages:
                     </p>
                 </div>
-                <div className="col-start-2 flex justify-center">
+                <div className=" flex justify-center">
                     <Donut/>
                 </div>
                 <div className="col-start-3 pl-2">
