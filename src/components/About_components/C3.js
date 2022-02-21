@@ -153,7 +153,7 @@ const C3 = () => {
                         of some of them in the atmosphere. This are the percentages:
                     </p>
                 </div>
-                <div className="col-start-2">
+                <div className="col-start-2 flex justify-center">
                     <Donut/>
                 </div>
                 <div className="col-start-3 pl-2">
