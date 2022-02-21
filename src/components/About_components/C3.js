@@ -105,7 +105,7 @@ const C3 = () => {
 
             <div className="grid grid-cols-2 pt-24  pb-48">
                 <div className="cols-span-2">
-                    <img className="" alt="img1"
+                    <img draggable={false} alt="img1"
                          src="https://i.imgur.com/mlkT4Hp.png"/>
                 </div>
                 <div className=" text-white px-28 pt-24">

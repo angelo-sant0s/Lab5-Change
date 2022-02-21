@@ -9,7 +9,7 @@ const Handle = ({
                     elementRefference
                 }) => (
     <span onMouseDown={onDragStart}
-          style={{ left: positionLeft }}
+          style={{left: positionLeft}}
           onMouseUp={onDragStop}
           ref={elementRefference}
 

@@ -17,7 +17,7 @@ const Error = () => {
                 </button>
             </div>
             <div className="flex justify-center ">
-                <img src={Earth} />
+                <img draggable={false} src={Earth} />
             </div>
         </div>
     )

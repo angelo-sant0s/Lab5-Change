@@ -20,8 +20,8 @@ const C1 = () => {
     return (
         <div>
             <Slider {...slider1}/>
-            <h1 className='text-white absolute top-1/4 left-36 titulo1 md:text-5xl lg:text-7xl text-lg'>THE WORLD IS</h1>
-            <h1 className='text-white absolute top-1/3 pt-11 left-36 titulo1 md:text-5xl lg:text-7xl text-lg'>CHANGING.</h1>
+            <h1 className='text-white absolute top-1/4 left-36 titulo1 text-7xl'>THE WORLD IS</h1>
+            <h1 className='text-white absolute top-1/3 pt-11 left-36 titulo1 text-7xl'>CHANGING.</h1>
         </div>
     )
 }
