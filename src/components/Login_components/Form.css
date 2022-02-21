@@ -21,13 +21,6 @@
     position: relative;
 }
 
-.form-success {
-    text-align: center;
-    font-size: 24px;
-    margin-top: 80px;
-    color: #fff;
-}
-
 .form-content-right {
     border-radius: 0 10px 10px 0;
     position: relative;
@@ -58,12 +51,6 @@
 .form-inputs {
     margin-bottom: 0.5rem;
     width: 80%;
-}
-
-.form-inputs p {
-    font-size: 0.8rem;
-    margin-top: 0.5rem;
-    color: #f00e0e;
 }
 
 .form-label {
