@@ -16,13 +16,13 @@ const Footer = () => {
                 <Link className="text-white titulo3 text-7xl" to='/'>Change</Link>
                 <p className="titulo2 font-extralight uppercase text-white mt-5 text-2xl ">Be the Change.</p>
                 <section className="text-white flex mb-5 mt-11 ">
-                    <span className="md:text-4xl sm:text-2xl" href="/" target="_blank" aria-label="Facebook">
+                    <span className="text-4xl" href="/" target="_blank" aria-label="Facebook">
                         <FaFacebook/>
                     </span>
-                    <span className="mr-9 ml-9 md:text-4xl sm:text-2xl " href="/" target="_blank" aria-label="Instagram">
+                    <span className="mr-9 ml-9 text-4xl" href="/" target="_blank" aria-label="Instagram">
                         <FaInstagram/>
                     </span>
-                    <span className="md:text-4xl sm:text-2xl" href="/" target="_blank" aria-label="Twitter">
+                    <span className="text-4xl" href="/" target="_blank" aria-label="Twitter">
                         <FaTwitter/>
                     </span>
                 </section>

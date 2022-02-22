@@ -1,9 +1,9 @@
 import React from 'react';
-import C1 from '../components/Home_components/C1';
+import Home_details from '../components/Home_components/Home_details';
 
 const Home = () => {
     return (
-        <C1 />
+        <Home_details />
     )
 }
 

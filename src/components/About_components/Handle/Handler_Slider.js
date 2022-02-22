@@ -1,4 +1,4 @@
-import './style.css';
+import './Handler_Slider.css';
 
 
 const Handle = ({

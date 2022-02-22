@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from "react";
 import {BiBarChart, BiLocationPlus, BiMailSend, BiCurrentLocation} from "react-icons/bi";
-import C1_A from "./User_details/C1_A"
+import User_Details from "./User_details/User_Details"
 import db, {useAuth} from "../../firebase-config";
 import {collection, onSnapshot} from "firebase/firestore";
 
@@ -64,7 +64,7 @@ const C1 = (props) => {
                     <div className=" container px-6 mx-auto">
                         <div className="">
                             {currentUser ? (<div className="flex-col flex pt-5 ">
-                                <C1_A gases={metodos_gas} cidade={metodos}/>
+                                <User_Details gases={metodos_gas} cidade={metodos}/>
                             </div>) : (<>
                                 <h1 className='text-white text-center mt-20 titulo3 text-6xl'>Loading...</h1>
                             </>)}

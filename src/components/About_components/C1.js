@@ -1,7 +1,7 @@
 import originalImage from '../../assets/imgs/img-original.jpg';
 import modifiedImage from '../../assets/imgs/img-modified.jpg';
 
-import Slider from './Slider';
+import Slider from './Slider/Slider';
 
 const slider1 = {
     delay: 500,

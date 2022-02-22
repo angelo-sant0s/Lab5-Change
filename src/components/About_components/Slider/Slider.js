@@ -1,10 +1,10 @@
 import { useState, useRef, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
-import Image from './Image';
-import Handle from './Handle';
+import Image from '../Image/Image_Slider';
+import Handle from '../Handle/Handler_Slider';
 
-import './About.css';
+import './Slider.css';
 
 function Slider({ original, modified, delay = 0 }) {
     const [isVisible, setIsVisible] = useState(false);

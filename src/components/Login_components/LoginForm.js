@@ -47,7 +47,6 @@ const LoginForm = () => {
                 <button className='form-input-btn btn titulo2 mt-5' disabled={loading || currentUser } onClick={handleLogin}>
                     Login
                 </button>
-                <div className='text-white'>{currentUser?.email}</div>
             </form>
     );
 };
