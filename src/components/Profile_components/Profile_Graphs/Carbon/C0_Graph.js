@@ -19,6 +19,7 @@ const C0Graph = (props) => {
   const [chartTK, setChartTK] = useState([]);
   const [chartNY, setChartNY] = useState([]);
   const [arraydata, setArrayData] = useState([]);
+  
 
   useEffect(() => {
     const fetchData = async () => {

@@ -85,35 +85,6 @@ const C1 = (props) => {
                                         <div className="flex items-start justify-between w-full">
                                             <div className="pl-3 text-left ">
                                                 <p className="font-medium tracking-tight titulo2 text-xl leading-5 text-gray-800">
-                                                    Choose the city
-                                                </p>
-                                                <p className="font-extralight text-md pt-2 text-gray-500">{cities.length}
-                                                    <span className="pl-1">Options</span>
-                                                </p>
-                                                <div className="text-left pt-5 pl-3">
-                                                    {cities.map((city) => (
-                                                        <div className="text-left pt-5 pl-3" key={city.name}>
-                                                            <div
-                                                                className="relative inline-block w-10 mr-2 align-middle select-none transition duration-200 ease-in">
-                                                                <input type="checkbox" name="toggle"
-                                                                       className="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer"
-                                                                       value={city.name} onChange={changeCity}/>
-                                                                <label
-                                                                    className="toggle-label block overflow-hidden h-6 rounded-full bg-gray-300 cursor-pointer"></label>
-                                                            </div>
-                                                            <label
-                                                                className="font-extralight text-md pt-2 tracking-tight text-gray-500">{city.name}</label>
-                                                        </div>))}
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="w-4/12 mr-7 mb-7 bg-white p-6 shadow rounded">
-                                    <div className="flex items-center border-b border-gray-200 pb-6">
-                                        <div className="flex items-start justify-between w-full">
-                                            <div className="pl-3 text-left ">
-                                                <p className="font-medium tracking-tight titulo2 text-xl leading-5 text-gray-800">
                                                     Choose the Gases
                                                 </p>
                                                 <p className="font-extralight text-md pt-2 text-gray-500">{cities.length}
@@ -135,6 +106,35 @@ const C1 = (props) => {
                                                                     className="font-extralight text-md pt-2 tracking-tight text-gray-500">{gas}</label>
                                                             </div>))}
                                                     </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>    
+                                </div>
+                                <div className="w-4/12 mr-7 mb-7 bg-white p-6 shadow rounded">
+                                    <div className="flex items-center border-b border-gray-200 pb-6">
+                                        <div className="flex items-start justify-between w-full">
+                                            <div className="pl-3 text-left ">
+                                                <p className="font-medium tracking-tight titulo2 text-xl leading-5 text-gray-800">
+                                                    Choose the city
+                                                </p>
+                                                <p className="font-extralight text-md pt-2 text-gray-500">{cities.length}
+                                                    <span className="pl-1">Options</span>
+                                                </p>
+                                                <div className="text-left pt-5 pl-3">
+                                                    {cities.map((city) => (
+                                                        <div className="text-left pt-5 pl-3" key={city.name}>
+                                                            <div
+                                                                className="relative inline-block w-10 mr-2 align-middle select-none transition duration-200 ease-in">
+                                                                <input type="checkbox" name="toggle"
+                                                                       className="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer"
+                                                                       value={city.name} onChange={changeCity}/>
+                                                                <label
+                                                                    className="toggle-label block overflow-hidden h-6 rounded-full bg-gray-300 cursor-pointer"></label>
+                                                            </div>
+                                                            <label
+                                                                className="font-extralight text-md pt-2 tracking-tight text-gray-500">{city.name}</label>
+                                                        </div>))}
                                                 </div>
                                             </div>
                                         </div>
