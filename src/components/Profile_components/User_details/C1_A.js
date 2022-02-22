@@ -1,6 +1,6 @@
 import React, { useEffect,useState } from "react";
 import db ,{upload, useAuth} from "../../../firebase-config";
-import {BiBarChart, BiCurrentLocation, BiLocationPlus, BiMailSend} from "react-icons/bi";
+import {BiBarChart, BiLocationPlus, BiMailSend} from "react-icons/bi";
 import {doc, getDoc} from "firebase/firestore";
 
 
@@ -57,13 +57,6 @@ const C1_A = (props) => {
                     </div>
                     <div className=" bg-white pl-5 pt-8 pb-20 rounded-lg shadow">
                         <ul className="divide-y-2 divide-gray-100">
-                            <li className="flex p-3 font-light text-md">
-                                <h1 className="pr-2 text-2xl">
-                                    <BiCurrentLocation/>
-                                </h1>
-                                <label className="pr-1">City:</label>
-                                <input className="font-medium" type="text" id="cidade" name="cidade"/>
-                            </li>
                             <li className="flex p-3 font-light text-md">
                                 <h1 className="pr-2 text-2xl">
                                     <BiMailSend/>
