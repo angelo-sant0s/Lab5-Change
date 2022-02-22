@@ -4,7 +4,7 @@ import {BiBarChart, BiLocationPlus, BiMailSend} from "react-icons/bi";
 import {doc, getDoc} from "firebase/firestore";
 
 
-const User_Details = (props) => {
+const UserDetails = (props) => {
 
     const currentUser = useAuth();
     const[photoURL, setPhotoUrl] = useState("https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__480.png");
@@ -98,4 +98,4 @@ const User_Details = (props) => {
     )
 }
 
-export default User_Details
+export default UserDetails;

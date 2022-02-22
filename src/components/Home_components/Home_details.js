@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 import Video from '../../assets/videos/video_1.mp4';
 
-const Home_details = () => {
+const HomeDetails = () => {
     return (
         <div className=''>
             <video className='video-fundo' src={Video} autoPlay muted loop />
@@ -22,4 +22,4 @@ const Home_details = () => {
     )
 }
 
-export default Home_details;
+export default HomeDetails;
