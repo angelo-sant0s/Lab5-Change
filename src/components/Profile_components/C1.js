@@ -88,7 +88,7 @@ const C1 = (props) => {
                                                     Choose the city
                                                 </p>
                                                 <p className="font-extralight text-md pt-2 text-gray-500">{cities.length}
-                                                    Options
+                                                    <span className="pl-1">Options</span>
                                                 </p>
                                                 <div className="text-left pt-5 pl-3">
                                                     {cities.map((city) => (
@@ -117,7 +117,7 @@ const C1 = (props) => {
                                                     Choose the Gases
                                                 </p>
                                                 <p className="font-extralight text-md pt-2 text-gray-500">{cities.length}
-                                                    Options
+                                                    <span className="pl-1">Options</span>
                                                 </p>
                                                 <div className="text-left  pl-3">
                                                     <div className="text-left pt-5 pl-3">
