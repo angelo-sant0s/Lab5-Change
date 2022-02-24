@@ -4,7 +4,12 @@
 
 @font-face {
     font-family: 'Argentum Sans';
-    src: url("./assets/fonts/ArgentumSans-Regular.ttf") format("truetype");
+    font-weight: 500;
+    src: url("./assets/fonts/ArgentumSans-Medium.ttf") format("truetype");
+}
+@font-face {
+    font-family: 'Argentum Sans';
+    src: url("./assets/fonts/ArgentumSans-ExtraLight.ttf") format("truetype");
 }
 @font-face {
     font-family: 'Basement Grotesque Black';
@@ -131,7 +136,7 @@ body {
 .navlinks{
     color: #fff;
     font-family: 'Argentum Sans', sans-serif;
-    font-weight: 150;
+    font-weight: 10;
     font-size: 22pt;
     text-decoration: none;
     padding: .5rem 2rem;
