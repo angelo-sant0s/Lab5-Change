@@ -41,7 +41,7 @@ const UserDetails = (props) => {
                 <div className="rounded shadow relative bg-white -mt-16 pt-11">
                     <div className=" text-center items-center w-36 h-42 mx-auto">
                         <div className="font-medium pb-3">
-                            {userinfo.username}
+                            {userinfo?.username}
                         </div>
                         <img src={photoURL} className="border-2 shadow w-36 h-36 border-black rounded-full" draggable={false} alt={photoURL}/>
                         <div className="grid grid-cols-2 gap-1 pt-5">
