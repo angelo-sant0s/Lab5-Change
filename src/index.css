@@ -3,15 +3,15 @@
 @tailwind utilities;
 
 @font-face {
-    font-family: 'Argentum Sans', sans-serif;
+    font-family: 'Argentum Sans';
     src: url("./assets/fonts/ArgentumSans-Regular.ttf") format("truetype");
 }
 @font-face {
-    font-family: 'Basement Grotesque Black', sans-serif;
+    font-family: 'Basement Grotesque Black';
     src: url("./assets/fonts/BasementGrotesque-Black_v1.202.otf") format("opentype");
 }
 @font-face {
-    font-family: 'Horizon', sans-serif;
+    font-family: 'Horizon';
     src: url("./assets/fonts/Horizon.otf") format("opentype");
 }
 
@@ -19,8 +19,7 @@
 body {
   margin: 0;
   background-color: black;
-  font-family: -apple-system, BlinkMacSystemFont, 'Basement Grotesque Black', 'Argentum Sans', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: 'Basement Grotesque Black', 'Argentum Sans', "Horizon",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
