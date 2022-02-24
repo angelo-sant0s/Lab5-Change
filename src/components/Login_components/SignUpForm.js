@@ -13,15 +13,21 @@ const SignUpForm = () => {
     const currentUser = useAuth();
 
     const handleSubmit = async (event) => {
-        setLoading(true);
-        try{    
-            await signup(emailRef.current.value,PasswordRef.current.value);           
+        if(passwordConfirmRef.current.value == PasswordRef.current.value){
             
-        }catch(error){
-            alert(error.message);
+            setLoading(true);
+            try{    
+                await signup(emailRef.current.value,PasswordRef.current.value);           
+                
+            }catch(error){
+                alert(error.message);
+            }
+            setLoading(false);
+        }else{
+            alert("Passwords dont match");
         }
-        setLoading(false);
     }
+
     useEffect(() => {
         if(currentUser?.uid){
             const docRef = doc(db, "users",currentUser.uid);
