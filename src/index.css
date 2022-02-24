@@ -2,10 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+    font-family: 'Argentum Sans', sans-serif;
+    src: url("./assets/fonts/ArgentumSans-Regular.ttf") format("truetype");
+}
+@font-face {
+    font-family: 'Basement Grotesque Black', sans-serif;
+    src: url("./assets/fonts/BasementGrotesque-Black_v1.202.otf") format("opentype");
+}
+@font-face {
+    font-family: 'Horizon', sans-serif;
+    src: url("./assets/fonts/Horizon.otf") format("opentype");
+}
+
+
 body {
   margin: 0;
   background-color: black;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  font-family: -apple-system, BlinkMacSystemFont, 'Basement Grotesque Black', 'Argentum Sans', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
